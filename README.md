@@ -8,7 +8,7 @@
 </h3>
 
 <div align="center">
-  <a href="https://www.linkedin.com/in/">
+  <a href="https://www.linkedin.com/in/aswin-biju7/">
     <img src="https://img.shields.io/badge/LinkedIn-Forge_Connections-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
   <a href="https://twitter.com/">
