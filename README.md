@@ -1,4 +1,4 @@
-.svg<div align="center">
+<div align="center">
 
 <!--  Drop solar.svg into the same repo as this README — it will animate in place  -->
 <img src="blackhole.svg" alt="Aswin's Universe" width="800"/>
