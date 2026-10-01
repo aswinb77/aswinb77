@@ -1,310 +1,254 @@
-<!-- v2 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300">
-  <defs>
-    <!-- Deep space background gradient -->
-    <radialGradient id="spaceGrad" cx="50%" cy="50%" r="70%">
-      <stop offset="0%" stop-color="#0d0a2e"/>
-      <stop offset="60%" stop-color="#04020f"/>
-      <stop offset="100%" stop-color="#000005"/>
-    </radialGradient>
+<defs>
+  <!-- Backgrounds -->
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#0c001f"/>
+    <stop offset="100%" stop-color="#020008"/>
+  </linearGradient>
+  <linearGradient id="machineGrad" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#2e1065"/>
+    <stop offset="30%" stop-color="#1a0840"/>
+    <stop offset="70%" stop-color="#120632"/>
+    <stop offset="100%" stop-color="#0a041e"/>
+  </linearGradient>
+  <linearGradient id="topBand" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#3b0f8c"/>
+    <stop offset="100%" stop-color="#1e0848"/>
+  </linearGradient>
+  <linearGradient id="btmBand" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#0e052c"/>
+    <stop offset="100%" stop-color="#080318"/>
+  </linearGradient>
+  <radialGradient id="reelBg" cx="50%" cy="50%" r="70%" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#100030"/>
+    <stop offset="100%" stop-color="#050018"/>
+  </radialGradient>
+  <radialGradient id="spinBtn" cx="40%" cy="35%" r="65%" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#9333ea"/>
+    <stop offset="100%" stop-color="#4c1d95"/>
+  </radialGradient>
+  <radialGradient id="leverKnob" cx="35%" cy="30%" r="65%" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#fca5a5"/>
+    <stop offset="60%" stop-color="#ef4444"/>
+    <stop offset="100%" stop-color="#991b1b"/>
+  </radialGradient>
+  <linearGradient id="leverChrome" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#6b7280"/>
+    <stop offset="45%" stop-color="#e5e7eb"/>
+    <stop offset="100%" stop-color="#6b7280"/>
+  </linearGradient>
+  <!-- Window edge fade: opaque at top+bottom, transparent in middle -->
+  <linearGradient id="windowFade" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop offset="0%"   stop-color="#090020"/>
+    <stop offset="28%"  stop-color="#090020" stop-opacity="0"/>
+    <stop offset="72%"  stop-color="#090020" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#090020"/>
+  </linearGradient>
 
-    <!-- Nebula glow gradients -->
-    <radialGradient id="nebula1" cx="30%" cy="40%" r="50%">
-      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="nebula2" cx="75%" cy="60%" r="50%">
-      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.28"/>
-      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="nebula3" cx="55%" cy="20%" r="40%">
-      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#ec4899" stop-opacity="0"/>
-    </radialGradient>
+  <!-- Glow filters -->
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="strongGlow" x="-80%" y="-80%" width="260%" height="260%">
+    <feGaussianBlur stdDeviation="9" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="symGlow" x="-30%" y="-60%" width="160%" height="220%">
+    <feGaussianBlur stdDeviation="4" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
 
-    <!-- Black hole core gradient -->
-    <radialGradient id="bhCore" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#000000"/>
-      <stop offset="70%" stop-color="#000000"/>
-      <stop offset="100%" stop-color="#1a0533"/>
-    </radialGradient>
+  <!-- Reel clip paths -->
+  <clipPath id="c1"><rect x="132" y="93" width="128" height="112" rx="4"/></clipPath>
+  <clipPath id="c2"><rect x="386" y="93" width="128" height="112" rx="4"/></clipPath>
+  <clipPath id="c3"><rect x="640" y="93" width="128" height="112" rx="4"/></clipPath>
 
-    <!-- Accretion disk gradients -->
-    <radialGradient id="diskOuter" cx="50%" cy="50%" r="50%" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#ff6b00" stop-opacity="0"/>
-      <stop offset="40%" stop-color="#ff8c00" stop-opacity="0.7"/>
-      <stop offset="70%" stop-color="#ffd700" stop-opacity="0.9"/>
-      <stop offset="85%" stop-color="#ff4500" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#c00" stop-opacity="0"/>
-    </radialGradient>
+  <!-- Scanlines -->
+  <pattern id="scanlines" x="0" y="0" width="1" height="5" patternUnits="userSpaceOnUse">
+    <rect width="900" height="2" fill="black" opacity="0.14"/>
+  </pattern>
 
-    <!-- Gravitational lensing ring gradient -->
-    <radialGradient id="lensRing" cx="50%" cy="50%" r="50%">
-      <stop offset="75%" stop-color="#7c3aed" stop-opacity="0"/>
-      <stop offset="85%" stop-color="#a855f7" stop-opacity="0.6"/>
-      <stop offset="90%" stop-color="#c084fc" stop-opacity="0.9"/>
-      <stop offset="95%" stop-color="#a855f7" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
-    </radialGradient>
+  <clipPath id="svgBound"><rect width="900" height="300"/></clipPath>
+</defs>
 
-    <!-- Photon ring glow -->
-    <filter id="glowSoft" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="glowStrong" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="10" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="diskBlur" x="-30%" y="-80%" width="160%" height="260%">
-      <feGaussianBlur stdDeviation="3 8"/>
-    </filter>
-    <filter id="starGlow" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="1.5"/>
-    </filter>
+<g clip-path="url(#svgBound)">
 
-    <!-- Clip path for SVG bounds -->
-    <clipPath id="svgBounds">
-      <rect width="900" height="300"/>
-    </clipPath>
+<!-- ── BACKGROUND ─────────────────────────────────────────── -->
+<rect width="900" height="300" fill="url(#bg)"/>
+<!-- Ambient glow -->
+<ellipse cx="450" cy="152" rx="390" ry="120" fill="#4c1d95" opacity="0.09" filter="url(#strongGlow)"/>
 
-    <!-- Text gradient -->
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#e0d7ff"/>
-      <stop offset="40%" stop-color="#c084fc"/>
-      <stop offset="80%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#f0abfc"/>
-    </linearGradient>
-    <linearGradient id="subtitleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#818cf8"/>
-      <stop offset="50%" stop-color="#c084fc"/>
-      <stop offset="100%" stop-color="#38bdf8"/>
-    </linearGradient>
-  </defs>
+<!-- ── MACHINE BODY ────────────────────────────────────────── -->
+<!-- Drop shadow -->
+<rect x="86" y="30" width="718" height="246" rx="20" fill="#000" opacity="0.55"/>
+<!-- Body -->
+<rect x="80" y="24" width="718" height="246" rx="20" fill="url(#machineGrad)"/>
+<!-- Top band -->
+<rect x="80" y="24" width="718" height="64" rx="20" fill="url(#topBand)"/>
+<rect x="80" y="68"  width="718" height="20" fill="#1e0848"/>
+<!-- Bottom band -->
+<rect x="80" y="216" width="718" height="54" rx="20" fill="url(#btmBand)"/>
+<rect x="80" y="216" width="718" height="20" fill="#0e052c"/>
+<!-- Top gloss -->
+<rect x="86" y="26" width="706" height="38" rx="16" fill="white" opacity="0.035"/>
+<!-- Neon border outer -->
+<rect x="80" y="24" width="718" height="246" rx="20" fill="none"
+      stroke="#7c3aed" stroke-width="2.5" filter="url(#glow)"/>
+<!-- Neon border inner -->
+<rect x="85" y="29" width="708" height="236" rx="18" fill="none"
+      stroke="#a855f7" stroke-width="0.8" opacity="0.35"/>
 
-  <g clip-path="url(#svgBounds)">
-    <!-- Background -->
-    <rect width="900" height="300" fill="url(#spaceGrad)"/>
+<!-- Corner indicator LEDs -->
+<circle cx="104" cy="50" r="6.5" fill="#1a0840" stroke="#6d28d9" stroke-width="1.5"/>
+<circle cx="104" cy="50" r="2.8" fill="#8b5cf6">
+  <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+</circle>
+<circle cx="121" cy="50" r="6.5" fill="#1a0840" stroke="#6d28d9" stroke-width="1.5"/>
+<circle cx="121" cy="50" r="2.8" fill="#06b6d4">
+  <animate attributeName="opacity" values="0.3;1;0.3" dur="2.6s" repeatCount="indefinite"/>
+</circle>
+<circle cx="757" cy="50" r="6.5" fill="#1a0840" stroke="#6d28d9" stroke-width="1.5"/>
+<circle cx="757" cy="50" r="2.8" fill="#06b6d4">
+  <animate attributeName="opacity" values="1;0.3;1" dur="2.6s" repeatCount="indefinite"/>
+</circle>
+<circle cx="774" cy="50" r="6.5" fill="#1a0840" stroke="#6d28d9" stroke-width="1.5"/>
+<circle cx="774" cy="50" r="2.8" fill="#8b5cf6">
+  <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+</circle>
 
-    <!-- Nebula clouds -->
-    <ellipse cx="270" cy="120" rx="320" ry="200" fill="url(#nebula1)"/>
-    <ellipse cx="675" cy="180" rx="300" ry="180" fill="url(#nebula2)"/>
-    <ellipse cx="495" cy="60" rx="250" ry="140" fill="url(#nebula3)"/>
+<!-- ── TITLE ──────────────────────────────────────────────── -->
+<text x="439" y="59"
+      font-family="'Arial Black',Impact,'Helvetica Neue',sans-serif"
+      font-size="17" font-weight="900" text-anchor="middle" letter-spacing="7"
+      fill="#22d3ee" filter="url(#glow)">◈  S T A C K . S L O T S  ◈</text>
 
-    <!-- Stars layer 1 — tiny, numerous -->
-    <g fill="white" opacity="0.7">
-      <circle cx="22" cy="18" r="0.6"/><circle cx="58" cy="7" r="0.5"/>
-      <circle cx="101" cy="42" r="0.7"/><circle cx="143" cy="11" r="0.5"/>
-      <circle cx="178" cy="33" r="0.6"/><circle cx="217" cy="56" r="0.4"/>
-      <circle cx="254" cy="14" r="0.7"/><circle cx="299" cy="38" r="0.5"/>
-      <circle cx="336" cy="22" r="0.6"/><circle cx="377" cy="9" r="0.4"/>
-      <circle cx="415" cy="47" r="0.7"/><circle cx="462" cy="19" r="0.5"/>
-      <circle cx="507" cy="31" r="0.6"/><circle cx="548" cy="8" r="0.4"/>
-      <circle cx="591" cy="44" r="0.7"/><circle cx="634" cy="16" r="0.5"/>
-      <circle cx="677" cy="29" r="0.6"/><circle cx="719" cy="53" r="0.4"/>
-      <circle cx="758" cy="12" r="0.7"/><circle cx="803" cy="37" r="0.5"/>
-      <circle cx="841" cy="21" r="0.6"/><circle cx="876" cy="48" r="0.4"/>
-      <circle cx="38" cy="82" r="0.5"/><circle cx="76" cy="68" r="0.7"/>
-      <circle cx="118" cy="91" r="0.4"/><circle cx="157" cy="74" r="0.6"/>
-      <circle cx="199" cy="103" r="0.5"/><circle cx="238" cy="77" r="0.7"/>
-      <circle cx="281" cy="94" r="0.4"/><circle cx="323" cy="70" r="0.6"/>
-      <circle cx="364" cy="88" r="0.5"/><circle cx="403" cy="66" r="0.7"/>
-      <circle cx="12" cy="128" r="0.6"/><circle cx="47" cy="141" r="0.4"/>
-      <circle cx="89" cy="117" r="0.7"/><circle cx="131" cy="153" r="0.5"/>
-      <circle cx="166" cy="133" r="0.6"/><circle cx="208" cy="148" r="0.4"/>
-      <circle cx="249" cy="126" r="0.7"/>
-      <!-- Right side stars -->
-      <circle cx="561" cy="72" r="0.5"/><circle cx="603" cy="88" r="0.7"/>
-      <circle cx="648" cy="61" r="0.4"/><circle cx="689" cy="77" r="0.6"/>
-      <circle cx="731" cy="94" r="0.5"/><circle cx="772" cy="68" r="0.7"/>
-      <circle cx="812" cy="83" r="0.4"/><circle cx="853" cy="72" r="0.6"/>
-      <circle cx="888" cy="91" r="0.5"/>
-      <circle cx="543" cy="131" r="0.7"/><circle cx="582" cy="148" r="0.4"/>
-      <circle cx="624" cy="119" r="0.6"/><circle cx="661" cy="143" r="0.5"/>
-      <circle cx="699" cy="127" r="0.7"/><circle cx="742" cy="153" r="0.4"/>
-      <circle cx="783" cy="138" r="0.6"/><circle cx="821" cy="117" r="0.5"/>
-      <circle cx="862" cy="141" r="0.7"/><circle cx="893" cy="128" r="0.4"/>
-      <!-- Bottom area -->
-      <circle cx="33" cy="198" r="0.6"/><circle cx="71" cy="213" r="0.4"/>
-      <circle cx="109" cy="187" r="0.7"/><circle cx="149" cy="222" r="0.5"/>
-      <circle cx="186" cy="204" r="0.6"/><circle cx="224" cy="218" r="0.4"/>
-      <circle cx="29" cy="257" r="0.5"/><circle cx="63" cy="241" r="0.7"/>
-      <circle cx="98" cy="268" r="0.4"/><circle cx="139" cy="254" r="0.6"/>
-      <circle cx="171" cy="273" r="0.5"/><circle cx="207" cy="248" r="0.7"/>
-      <circle cx="602" cy="198" r="0.6"/><circle cx="643" cy="213" r="0.4"/>
-      <circle cx="681" cy="187" r="0.7"/><circle cx="717" cy="222" r="0.5"/>
-      <circle cx="756" cy="204" r="0.6"/><circle cx="793" cy="218" r="0.4"/>
-      <circle cx="831" cy="198" r="0.7"/><circle cx="866" cy="212" r="0.5"/>
-      <circle cx="898" cy="201" r="0.6"/>
-      <circle cx="621" cy="257" r="0.5"/><circle cx="659" cy="241" r="0.7"/>
-      <circle cx="697" cy="268" r="0.4"/><circle cx="733" cy="254" r="0.6"/>
-      <circle cx="771" cy="273" r="0.5"/><circle cx="809" cy="248" r="0.7"/>
-      <circle cx="847" cy="261" r="0.4"/><circle cx="883" cy="279" r="0.6"/>
-    </g>
+<!-- ── REEL WINDOWS ───────────────────────────────────────── -->
+<!-- Window 1 -->
+<rect x="132" y="93" width="128" height="112" rx="4" fill="url(#reelBg)" stroke="#6d28d9" stroke-width="2"/>
+<!-- Window 2 -->
+<rect x="386" y="93" width="128" height="112" rx="4" fill="url(#reelBg)" stroke="#6d28d9" stroke-width="2"/>
+<!-- Window 3 -->
+<rect x="640" y="93" width="128" height="112" rx="4" fill="url(#reelBg)" stroke="#6d28d9" stroke-width="2"/>
 
-    <!-- Stars layer 2 — bright twinklers -->
-    <g filter="url(#starGlow)">
-      <circle cx="55" cy="55" r="1.4" fill="#e0e8ff">
-        <animate attributeName="opacity" values="0.9;0.2;0.9" dur="3.2s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="190" cy="28" r="1.6" fill="#ffd6fa">
-        <animate attributeName="opacity" values="0.7;0.1;0.7" dur="4.7s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="320" cy="52" r="1.3" fill="#d6f0ff">
-        <animate attributeName="opacity" values="0.8;0.15;0.8" dur="2.9s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="82" cy="245" r="1.5" fill="#e0e8ff">
-        <animate attributeName="opacity" values="0.7;0.2;0.7" dur="5.1s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="155" cy="270" r="1.2" fill="#ffd6fa">
-        <animate attributeName="opacity" values="0.9;0.1;0.9" dur="3.8s" repeatCount="indefinite"/>
-      </circle>
-      <!-- Right twinklers -->
-      <circle cx="838" cy="44" r="1.5" fill="#d6f0ff">
-        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="4.2s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="712" cy="22" r="1.3" fill="#e0e8ff">
-        <animate attributeName="opacity" values="0.6;0.1;0.6" dur="3.6s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="870" cy="251" r="1.6" fill="#ffd6fa">
-        <animate attributeName="opacity" values="0.9;0.2;0.9" dur="2.8s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="798" cy="273" r="1.2" fill="#d6f0ff">
-        <animate attributeName="opacity" values="0.7;0.15;0.7" dur="4.9s" repeatCount="indefinite"/>
-      </circle>
-    </g>
+<!-- Win-line dashes between windows -->
+<line x1="86"  y1="149" x2="132" y2="149" stroke="#facc15" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
+<line x1="260" y1="149" x2="386" y2="149" stroke="#facc15" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
+<line x1="514" y1="149" x2="640" y2="149" stroke="#facc15" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
+<line x1="768" y1="149" x2="798" y2="149" stroke="#facc15" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
 
-    <!-- ===== BLACK HOLE — centered at (225, 150) ===== -->
-    <g transform="translate(225,150)">
+<!-- Win-line pointer arrows -->
+<polygon points="108,143 124,149 108,155" fill="#facc15" filter="url(#glow)">
+  <animate attributeName="opacity" values="1;0.25;1" dur="1.3s" repeatCount="indefinite"/>
+</polygon>
+<polygon points="770,143 754,149 770,155" fill="#facc15" filter="url(#glow)">
+  <animate attributeName="opacity" values="1;0.25;1" dur="1.3s" repeatCount="indefinite"/>
+</polygon>
 
-      <!-- Distant accretion disk glow (very diffuse) -->
-      <ellipse cx="0" cy="0" rx="110" ry="28" fill="#ff6b00" opacity="0.08" filter="url(#glowStrong)"/>
-
-      <!-- Spinning accretion disk — outer haze -->
-      <g filter="url(#diskBlur)">
-        <ellipse cx="0" cy="0" rx="108" ry="22" fill="none" stroke="#ff8c00" stroke-width="18" stroke-opacity="0.25">
-          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
-        </ellipse>
-      </g>
-
-      <!-- Accretion disk main — hot orbital rings -->
-      <g>
-        <!-- Outer cool ring -->
-        <ellipse cx="0" cy="0" rx="104" ry="19" fill="none" stroke="#c84b00" stroke-width="6" stroke-opacity="0.45" stroke-dasharray="280 80">
-          <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="18s" repeatCount="indefinite"/>
-        </ellipse>
-        <!-- Mid ring bright -->
-        <ellipse cx="0" cy="0" rx="92" ry="16" fill="none" stroke="#ff9500" stroke-width="8" stroke-opacity="0.6" stroke-dasharray="220 60">
-          <animateTransform attributeName="transform" type="rotate" from="30" to="390" dur="13s" repeatCount="indefinite"/>
-        </ellipse>
-        <!-- Hot inner ring -->
-        <ellipse cx="0" cy="0" rx="78" ry="12" fill="none" stroke="#ffc200" stroke-width="9" stroke-opacity="0.75" stroke-dasharray="180 40">
-          <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="9s" repeatCount="indefinite"/>
-        </ellipse>
-        <!-- Brightest near-horizon ring -->
-        <ellipse cx="0" cy="0" rx="64" ry="9" fill="none" stroke="#ffe680" stroke-width="7" stroke-opacity="0.85" stroke-dasharray="150 30">
-          <animateTransform attributeName="transform" type="rotate" from="60" to="420" dur="6s" repeatCount="indefinite"/>
-        </ellipse>
-      </g>
-
-      <!-- Photon ring / gravitational lensing -->
-      <circle cx="0" cy="0" r="56" fill="none" stroke="#a855f7" stroke-width="2" stroke-opacity="0.7" filter="url(#glowSoft)">
-        <animate attributeName="stroke-opacity" values="0.7;0.4;0.7" dur="4s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="0" cy="0" r="54" fill="none" stroke="#c084fc" stroke-width="1" stroke-opacity="0.5">
-        <animate attributeName="stroke-opacity" values="0.5;0.2;0.5" dur="4s" repeatCount="indefinite"/>
-      </circle>
-
-      <!-- Event horizon shadow (the black hole itself) -->
-      <circle cx="0" cy="0" r="50" fill="url(#bhCore)"/>
-
-      <!-- Inner shadow ring to deepen the void -->
-      <circle cx="0" cy="0" r="48" fill="#000000"/>
-
-      <!-- Subtle pulsing core hint (barely visible within horizon) -->
-      <circle cx="0" cy="0" r="20" fill="#0f0020" opacity="0.6">
-        <animate attributeName="r" values="20;24;20" dur="8s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="8s" repeatCount="indefinite"/>
-      </circle>
-
-      <!-- Top bright lensed arc (light bending over the top) -->
-      <path d="M -80,-6 Q 0,-70 80,-6" fill="none" stroke="#ffd280" stroke-width="2.5" stroke-opacity="0.6" filter="url(#glowSoft)">
-        <animate attributeName="stroke-opacity" values="0.6;0.3;0.6" dur="5s" repeatCount="indefinite"/>
-      </path>
-      <path d="M -70,-4 Q 0,-58 70,-4" fill="none" stroke="#ffe8a0" stroke-width="1.5" stroke-opacity="0.4"/>
-
-      <!-- Bottom (Einstein ring arc — reflected) -->
-      <path d="M -76,8 Q 0,60 76,8" fill="none" stroke="#ff9500" stroke-width="2" stroke-opacity="0.45" filter="url(#glowSoft)">
-        <animate attributeName="stroke-opacity" values="0.45;0.2;0.45" dur="6s" repeatCount="indefinite"/>
-      </path>
-
-      <!-- Relativistic jet — upward -->
-      <line x1="0" y1="-50" x2="0" y2="-120" stroke="#a855f7" stroke-width="2" stroke-opacity="0.5" filter="url(#glowSoft)">
-        <animate attributeName="stroke-opacity" values="0.5;0.1;0.5" dur="3s" repeatCount="indefinite"/>
-      </line>
-      <ellipse cx="0" cy="-130" rx="6" ry="18" fill="#7c3aed" opacity="0.3" filter="url(#glowStrong)">
-        <animate attributeName="opacity" values="0.3;0.05;0.3" dur="3s" repeatCount="indefinite"/>
-      </ellipse>
-      <!-- Downward jet -->
-      <line x1="0" y1="50" x2="0" y2="130" stroke="#0ea5e9" stroke-width="1.5" stroke-opacity="0.4" filter="url(#glowSoft)">
-        <animate attributeName="stroke-opacity" values="0.4;0.08;0.4" dur="3.5s" repeatCount="indefinite"/>
-      </line>
-      <ellipse cx="0" cy="138" rx="5" ry="14" fill="#0369a1" opacity="0.25" filter="url(#glowStrong)">
-        <animate attributeName="opacity" values="0.25;0.04;0.25" dur="3.5s" repeatCount="indefinite"/>
-      </ellipse>
-    </g>
-    <!-- ===== END BLACK HOLE ===== -->
-
-    <!-- ===== TEXT — right side (offset from black hole) ===== -->
-    <g transform="translate(490, 95)">
-
-      <!-- Greeting -->
-      <text x="0" y="0" font-family="'Segoe UI', 'Inter', 'Arial', sans-serif"
-            font-size="14" letter-spacing="4" fill="#a78bfa" opacity="0.85"
-            font-weight="400">
-        WELCOME TO THE UNIVERSE OF
-        <animate attributeName="opacity" values="0.85;0.5;0.85" dur="6s" repeatCount="indefinite"/>
-      </text>
-
-      <!-- Main name -->
-      <text x="-2" y="52" font-family="'Segoe UI', 'Inter', 'Georgia', serif"
-            font-size="46" font-weight="800" letter-spacing="2"
-            fill="url(#textGrad)" filter="url(#glowSoft)">
-        ASWIN BIJU
-      </text>
-
-      <!-- Animated underline -->
-      <rect x="0" y="60" width="0" height="2" rx="1" fill="url(#subtitleGrad)" opacity="0.8">
-        <animate attributeName="width" values="0;280;280" dur="2s" fill="freeze"/>
-      </rect>
-
-      <!-- Subtitle / tagline -->
-      <text x="2" y="90" font-family="'Segoe UI', 'Inter', 'Arial', sans-serif"
-            font-size="14.5" letter-spacing="1.5" fill="url(#subtitleGrad)" opacity="0.9">
-        Builder of Systems · Explorer of Frontiers
-      </text>
-
-      <!-- Specializations row -->
-      <g transform="translate(0, 118)" opacity="0">
-        <animate attributeName="opacity" values="0;1" dur="1.5s" begin="1.5s" fill="freeze"/>
-
-        <!-- Tag 1 -->
-        <rect x="0" y="0" width="110" height="24" rx="12" fill="#7c3aed" fill-opacity="0.25" stroke="#a855f7" stroke-width="0.8" stroke-opacity="0.7"/>
-        <text x="55" y="16" font-family="'Segoe UI', 'Inter', sans-serif" font-size="11" fill="#c084fc" text-anchor="middle" letter-spacing="0.5">Full Stack Dev</text>
-
-        <!-- Tag 2 -->
-        <rect x="118" y="0" width="110" height="24" rx="12" fill="#0369a1" fill-opacity="0.25" stroke="#38bdf8" stroke-width="0.8" stroke-opacity="0.7"/>
-        <text x="173" y="16" font-family="'Segoe UI', 'Inter', sans-serif" font-size="11" fill="#7dd3fc" text-anchor="middle" letter-spacing="0.5">ML / AI</text>
-
-        <!-- Tag 3 -->
-        <rect x="236" y="0" width="130" height="24" rx="12" fill="#831843" fill-opacity="0.25" stroke="#f472b6" stroke-width="0.8" stroke-opacity="0.7"/>
-        <text x="301" y="16" font-family="'Segoe UI', 'Inter', sans-serif" font-size="11" fill="#f9a8d4" text-anchor="middle" letter-spacing="0.5">Open Source</text>
-      </g>
-
-    </g>
-    <!-- ===== END TEXT ===== -->
-
-    <!-- Subtle vignette edge -->
-    <rect width="900" height="300" fill="none" stroke="#000" stroke-width="40" opacity="0.5"/>
+<!-- ── REEL 1 — Languages ─────────────────────────────────── -->
+<!-- each symbol 90px apart, 6 unique + 1 dup = animate 0→-540 seamlessly -->
+<g clip-path="url(#c1)">
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+                      from="0,0" to="0,-540"
+                      dur="2.5s" repeatCount="indefinite" calcMode="linear"/>
+    <text x="196" y="163" font-family="'Arial Black',Impact,sans-serif" font-size="46" font-weight="900" text-anchor="middle" fill="#f7df1e" filter="url(#symGlow)">JS</text>
+    <text x="196" y="253" font-family="'Arial Black',Impact,sans-serif" font-size="46" font-weight="900" text-anchor="middle" fill="#3b82f6" filter="url(#symGlow)">TS</text>
+    <text x="196" y="343" font-family="'Arial Black',Impact,sans-serif" font-size="46" font-weight="900" text-anchor="middle" fill="#4ade80" filter="url(#symGlow)">PY</text>
+    <text x="196" y="433" font-family="'Arial Black',Impact,sans-serif" font-size="46" font-weight="900" text-anchor="middle" fill="#22d3ee" filter="url(#symGlow)">GO</text>
+    <text x="196" y="523" font-family="'Arial Black',Impact,sans-serif" font-size="46" font-weight="900" text-anchor="middle" fill="#f97316" filter="url(#symGlow)">RS</text>
+    <text x="196" y="613" font-family="'Arial Black',Impact,sans-serif" font-size="46" font-weight="900" text-anchor="middle" fill="#c084fc" filter="url(#symGlow)">C#</text>
+    <!-- dup of first for seamless loop -->
+    <text x="196" y="703" font-family="'Arial Black',Impact,sans-serif" font-size="46" font-weight="900" text-anchor="middle" fill="#f7df1e" filter="url(#symGlow)">JS</text>
   </g>
+</g>
+<!-- fade + scanlines overlay -->
+<rect x="132" y="93" width="128" height="112" rx="4" fill="url(#windowFade)"/>
+<rect x="132" y="93" width="128" height="112" fill="url(#scanlines)"/>
+<!-- window inner rim -->
+<rect x="132" y="93" width="128" height="112" rx="4" fill="none" stroke="#0a0025" stroke-width="3.5" opacity="0.7"/>
+
+<!-- ── REEL 2 — Code Symbols ──────────────────────────────── -->
+<g clip-path="url(#c2)">
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+                      from="0,0" to="0,-540"
+                      dur="3.3s" repeatCount="indefinite" calcMode="linear"/>
+    <text x="450" y="161" font-family="'Courier New',Courier,monospace" font-size="38" font-weight="900" text-anchor="middle" fill="#fbbf24" filter="url(#symGlow)">{  }</text>
+    <text x="450" y="251" font-family="'Courier New',Courier,monospace" font-size="34" font-weight="900" text-anchor="middle" fill="#fb923c" filter="url(#symGlow)">&lt;/&gt;</text>
+    <text x="450" y="341" font-family="'Courier New',Courier,monospace" font-size="38" font-weight="900" text-anchor="middle" fill="#4ade80" filter="url(#symGlow)">$_</text>
+    <text x="450" y="431" font-family="'Courier New',Courier,monospace" font-size="38" font-weight="900" text-anchor="middle" fill="#a78bfa" filter="url(#symGlow)">=&gt;</text>
+    <text x="450" y="521" font-family="'Courier New',Courier,monospace" font-size="40" font-weight="900" text-anchor="middle" fill="#38bdf8" filter="url(#symGlow)">::</text>
+    <text x="450" y="611" font-family="'Courier New',Courier,monospace" font-size="40" font-weight="900" text-anchor="middle" fill="#e879f9" filter="url(#symGlow)">//</text>
+    <text x="450" y="701" font-family="'Courier New',Courier,monospace" font-size="38" font-weight="900" text-anchor="middle" fill="#fbbf24" filter="url(#symGlow)">{  }</text>
+  </g>
+</g>
+<rect x="386" y="93" width="128" height="112" rx="4" fill="url(#windowFade)"/>
+<rect x="386" y="93" width="128" height="112" fill="url(#scanlines)"/>
+<rect x="386" y="93" width="128" height="112" rx="4" fill="none" stroke="#0a0025" stroke-width="3.5" opacity="0.7"/>
+
+<!-- ── REEL 3 — Tools / DevOps ────────────────────────────── -->
+<g clip-path="url(#c3)">
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+                      from="0,0" to="0,-540"
+                      dur="4.4s" repeatCount="indefinite" calcMode="linear"/>
+    <text x="704" y="163" font-family="'Arial Black',Impact,sans-serif" font-size="41" font-weight="900" text-anchor="middle" fill="#f1502f" filter="url(#symGlow)">GIT</text>
+    <text x="704" y="253" font-family="'Arial Black',Impact,sans-serif" font-size="41" font-weight="900" text-anchor="middle" fill="#7090d0" filter="url(#symGlow)">SQL</text>
+    <text x="704" y="343" font-family="'Arial Black',Impact,sans-serif" font-size="41" font-weight="900" text-anchor="middle" fill="#818cf8" filter="url(#symGlow)">API</text>
+    <text x="704" y="433" font-family="'Arial Black',Impact,sans-serif" font-size="41" font-weight="900" text-anchor="middle" fill="#34d399" filter="url(#symGlow)">CLI</text>
+    <text x="704" y="523" font-family="'Arial Black',Impact,sans-serif" font-size="41" font-weight="900" text-anchor="middle" fill="#60a5fa" filter="url(#symGlow)">CSS</text>
+    <text x="704" y="613" font-family="'Arial Black',Impact,sans-serif" font-size="41" font-weight="900" text-anchor="middle" fill="#fb923c" filter="url(#symGlow)">AWS</text>
+    <text x="704" y="703" font-family="'Arial Black',Impact,sans-serif" font-size="41" font-weight="900" text-anchor="middle" fill="#f1502f" filter="url(#symGlow)">GIT</text>
+  </g>
+</g>
+<rect x="640" y="93" width="128" height="112" rx="4" fill="url(#windowFade)"/>
+<rect x="640" y="93" width="128" height="112" fill="url(#scanlines)"/>
+<rect x="640" y="93" width="128" height="112" rx="4" fill="none" stroke="#0a0025" stroke-width="3.5" opacity="0.7"/>
+
+<!-- ── BOTTOM UI ───────────────────────────────────────────── -->
+
+<!-- Credits display -->
+<rect x="107" y="226" width="124" height="32" rx="4" fill="#08021a" stroke="#3b0764" stroke-width="1"/>
+<text x="169" y="237" font-family="'Courier New',monospace" font-size="7.5" text-anchor="middle" fill="#6d28d9" letter-spacing="1.5">CREDITS</text>
+<text x="169" y="252" font-family="'Courier New',monospace" font-size="17" font-weight="bold" text-anchor="middle" fill="#7c3aed">∞  ∞  ∞</text>
+
+<!-- SPIN button -->
+<rect x="369" y="226" width="140" height="36" rx="18" fill="url(#spinBtn)" stroke="#9333ea" stroke-width="1.5" filter="url(#glow)">
+  <animate attributeName="opacity" values="1;0.75;1" dur="2.4s" repeatCount="indefinite"/>
+</rect>
+<rect x="369" y="226" width="140" height="36" rx="18" fill="none" stroke="#d8b4fe" stroke-width="0.6" opacity="0.5"/>
+<text x="439" y="249" font-family="'Arial Black',Impact,sans-serif"
+      font-size="13" font-weight="900" text-anchor="middle" letter-spacing="4" fill="#f3e8ff">▶  SPIN</text>
+
+<!-- High score display -->
+<rect x="647" y="226" width="124" height="32" rx="4" fill="#08021a" stroke="#3b0764" stroke-width="1"/>
+<text x="709" y="237" font-family="'Courier New',monospace" font-size="7.5" text-anchor="middle" fill="#6d28d9" letter-spacing="1">HIGH SCORE</text>
+<text x="709" y="252" font-family="'Courier New',monospace" font-size="15" font-weight="bold" text-anchor="middle" fill="#7c3aed">01001111</text>
+
+<!-- INSERT COIN blink -->
+<text x="439" y="280" font-family="'Courier New',monospace" font-size="9"
+      text-anchor="middle" letter-spacing="2" fill="#6d28d9">
+  ⚡  INSERT COIN TO PLAY  ⚡
+  <animate attributeName="opacity" values="1;0;1" dur="1.7s" repeatCount="indefinite"/>
+</text>
+
+<!-- ── LEVER ──────────────────────────────────────────────── -->
+<!-- Track -->
+<rect x="830" y="90" width="12" height="116" rx="6" fill="#14052e" stroke="#3b0764" stroke-width="1.2"/>
+<!-- Animated pull -->
+<g>
+  <animateTransform attributeName="transform" type="translate"
+                    values="0,0; 0,76; 0,76; 0,0"
+                    keyTimes="0;0.35;0.65;1"
+                    dur="5s" repeatCount="indefinite" calcMode="spline"
+                    keySplines="0.4 0 0.2 1; 0 0 0 0; 0.4 0 0.2 1"/>
+  <line x1="836" y1="102" x2="836" y2="158" stroke="url(#leverChrome)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="836" cy="94" r="13" fill="url(#leverKnob)" stroke="#7f1d1d" stroke-width="1.5"/>
+  <circle cx="831" cy="89" r="3.5" fill="#fecaca" opacity="0.65"/>
+</g>
+<!-- Lever base plate -->
+<rect x="822" y="202" width="28" height="10" rx="4" fill="#2e1065"/>
+
+</g>
 </svg>
