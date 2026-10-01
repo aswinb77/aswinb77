@@ -3,10 +3,10 @@
   <defs>
     <!-- Cabinet Gradients -->
     <linearGradient id="cabGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#241433"/>
-      <stop offset="25%" stop-color="#140a1d"/>
-      <stop offset="75%" stop-color="#0e0614"/>
-      <stop offset="100%" stop-color="#1d102a"/>
+      <stop offset="0%" stop-color="#1b122c"/>
+      <stop offset="25%" stop-color="#0f0919"/>
+      <stop offset="75%" stop-color="#090510"/>
+      <stop offset="100%" stop-color="#160e24"/>
     </linearGradient>
 
     <linearGradient id="goldBevel" x1="0" y1="0" x2="1" y2="1">
@@ -16,30 +16,43 @@
       <stop offset="100%" stop-color="#78350f"/>
     </linearGradient>
 
+    <linearGradient id="cyanBevel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="40%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
     <linearGradient id="innerWindowBg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#060209"/>
-      <stop offset="100%" stop-color="#0b0410"/>
+      <stop offset="0%" stop-color="#050208"/>
+      <stop offset="100%" stop-color="#09030e"/>
     </linearGradient>
 
     <!-- Cylindrical Drum Shadows -->
     <linearGradient id="cylinderShadow" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#000000" stop-opacity="0.94"/>
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.95"/>
       <stop offset="22%" stop-color="#000000" stop-opacity="0.25"/>
       <stop offset="50%" stop-color="#000000" stop-opacity="0"/>
       <stop offset="78%" stop-color="#000000" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0.94"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
     </linearGradient>
 
-    <!-- Glass Specular Reflection -->
     <linearGradient id="glassReflection" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
-      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.03"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.02"/>
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
 
-    <!-- Glow Filters -->
+    <!-- Filters -->
+    <filter id="cyanGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
     <filter id="goldGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -54,120 +67,91 @@
       </feMerge>
     </filter>
 
-    <!-- SYMBOLS -->
-    <!-- 1. LUCKY 7 -->
-    <g id="sym7">
-      <!-- Radiant Aura -->
-      <path d="M -34 -38 L 34 -38 L 34 -20 L 9 38 L -13 38 L 11 -18 L -34 -18 Z"
-            fill="#f59e0b" opacity="0.35" filter="url(#goldGlow)"/>
-      <!-- Body Red Gradient -->
-      <linearGradient id="sevenGrad" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#f87171"/>
-        <stop offset="35%" stop-color="#dc2626"/>
-        <stop offset="100%" stop-color="#7f1d1d"/>
-      </linearGradient>
-      <!-- Main Shape -->
-      <path d="M -32 -36 L 32 -36 L 32 -20 L 8 36 L -12 36 L 10 -18 L -32 -18 Z"
-            fill="url(#sevenGrad)" stroke="#fde047" stroke-width="4.5" stroke-linejoin="round"/>
-      <!-- Inner Specular Highlight Line -->
-      <path d="M -26 -30 L 26 -30 L 7 24"
-            fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- ── TECH STACK SYMBOLS ── -->
+
+    <!-- 1. REACT (WINNING JACKPOT SYMBOL) -->
+    <g id="symReact">
+      <!-- Radiant Cyan Glow Backing -->
+      <circle cx="0" cy="0" r="28" fill="#087ea4" opacity="0.3" filter="url(#cyanGlow)"/>
+      <!-- Nucleus -->
+      <circle cx="0" cy="0" r="7.5" fill="#61dafb" filter="url(#cyanGlow)"/>
+      <circle cx="0" cy="0" r="4" fill="#ffffff"/>
+      <!-- Three Atomic Orbits -->
+      <ellipse cx="0" cy="0" rx="35" ry="13" fill="none" stroke="#61dafb" stroke-width="3.2"/>
+      <ellipse cx="0" cy="0" rx="35" ry="13" fill="none" stroke="#61dafb" stroke-width="3.2" transform="rotate(60)"/>
+      <ellipse cx="0" cy="0" rx="35" ry="13" fill="none" stroke="#61dafb" stroke-width="3.2" transform="rotate(120)"/>
+      <!-- Golden Orbit Trim on Jackpot -->
+      <circle cx="0" cy="0" r="38" fill="none" stroke="url(#goldBevel)" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.8"/>
     </g>
 
-    <!-- 2. DIAMOND -->
-    <g id="symDiamond">
-      <!-- Faceted Brilliant -->
-      <!-- Table top -->
-      <polygon points="-16,-28 16,-28 32,-8 -32,-8" fill="#e0f2fe"/>
-      <!-- Table Center -->
-      <polygon points="-16,-28 16,-28 10,-8 -10,-8" fill="#bae6fd"/>
-      <!-- Center Pavilion -->
-      <polygon points="-32,-8 32,-8 0,32" fill="#38bdf8"/>
-      <!-- Left Facet -->
-      <polygon points="-32,-8 -12,-8 0,32" fill="#0284c7"/>
-      <!-- Right Facet -->
-      <polygon points="32,-8 12,-8 0,32" fill="#0369a1"/>
-      <!-- Outlines -->
-      <polygon points="-16,-28 16,-28 32,-8 0,32 -32,-8" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.4" stroke-linejoin="round"/>
-      <!-- Sparkle Glint -->
-      <circle cx="-8" cy="-16" r="3.5" fill="#ffffff" filter="url(#goldGlow)"/>
+    <!-- 2. PYTHON -->
+    <g id="symPython">
+      <g transform="translate(-32, -32) scale(0.5)">
+        <!-- Top Blue Snake -->
+        <path fill="#387eb8" d="M63.5 1.5c-15.6 0-26 6.8-26 20.3v15h26v4.5H23.8C10.5 41.3 0 51.5 0 66.8c0 15.6 11.2 26 26.5 26h9v-13c0-14.8 12.5-26 27-26h26V36c0-14.2-11.8-25.5-25-34.5zm-14 8a4.5 4.5 0 110 9 4.5 4.5 0 010-9z"/>
+        <!-- Bottom Gold Snake -->
+        <path fill="#ffe052" d="M64.5 126.5c15.6 0 26-6.8 26-20.3v-15h-26v-4.5h39.7c13.3 0 23.8-10.2 23.8-25.5 0-15.6-11.2-26-26.5-26h-9v13c0 14.8-12.5 26-27 26h-26V92c0 14.2 11.8 25.5 25 34.5zm14-8a4.5 4.5 0 110-9 4.5 4.5 0 010 9z"/>
+      </g>
     </g>
 
-    <!-- 3. CHERRY -->
-    <g id="symCherry">
-      <!-- Stems -->
-      <path d="M -14 8 Q -4 -20 6 -30" fill="none" stroke="#65a30d" stroke-width="4" stroke-linecap="round"/>
-      <path d="M 16 12 Q 8 -16 6 -30" fill="none" stroke="#65a30d" stroke-width="4" stroke-linecap="round"/>
-      <!-- Leaf -->
-      <path d="M 6 -30 Q 24 -40 30 -28 Q 20 -20 6 -30 Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
-      <!-- Left Cherry -->
-      <radialGradient id="cherryGrad1" cx="35%" cy="35%" r="65%">
-        <stop offset="0%" stop-color="#fda4af"/>
-        <stop offset="35%" stop-color="#f43f5e"/>
-        <stop offset="100%" stop-color="#881337"/>
-      </radialGradient>
-      <circle cx="-16" cy="12" r="17" fill="url(#cherryGrad1)"/>
-      <circle cx="-21" cy="6" r="4" fill="#ffffff" opacity="0.8"/>
-      <!-- Right Cherry -->
-      <radialGradient id="cherryGrad2" cx="35%" cy="35%" r="65%">
-        <stop offset="0%" stop-color="#fda4af"/>
-        <stop offset="35%" stop-color="#f43f5e"/>
-        <stop offset="100%" stop-color="#881337"/>
-      </radialGradient>
-      <circle cx="16" cy="16" r="17" fill="url(#cherryGrad2)"/>
-      <circle cx="11" cy="10" r="4" fill="#ffffff" opacity="0.8"/>
+    <!-- 3. TYPESCRIPT -->
+    <g id="symTS">
+      <rect x="-30" y="-30" width="60" height="60" rx="10" fill="#3178c6" stroke="#60a5fa" stroke-width="2"/>
+      <rect x="-27" y="-27" width="54" height="54" rx="8" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+      <text x="-13" y="16" font-family="'Arial Black', Impact, sans-serif" font-size="28" font-weight="900" fill="#ffffff" text-anchor="middle">T</text>
+      <text x="14" y="16" font-family="'Arial Black', Impact, sans-serif" font-size="28" font-weight="900" fill="#ffffff" text-anchor="middle">S</text>
     </g>
 
-    <!-- 4. BELL -->
-    <g id="symBell">
-      <!-- Top Loop -->
-      <circle cx="0" cy="-26" r="7" fill="none" stroke="#b45309" stroke-width="4.5"/>
-      <!-- Bell Body Gradient -->
-      <linearGradient id="bellGrad" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#fef08a"/>
-        <stop offset="40%" stop-color="#f59e0b"/>
-        <stop offset="100%" stop-color="#9a3412"/>
-      </linearGradient>
-      <path d="M -10 -20 Q -20 -6 -22 12 Q -30 22 -28 26 L 28 26 Q 30 22 22 12 Q 20 -6 10 -20 Z"
-            fill="url(#bellGrad)" stroke="#fde047" stroke-width="3" stroke-linejoin="round"/>
-      <!-- Bell Rim -->
-      <rect x="-30" y="24" width="60" height="6" rx="3" fill="#fde047" stroke="#b45309" stroke-width="1.5"/>
-      <!-- Clapper -->
-      <circle cx="0" cy="30" r="7" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+    <!-- 4. JAVASCRIPT -->
+    <g id="symJS">
+      <rect x="-30" y="-30" width="60" height="60" rx="10" fill="#f7df1e" stroke="#fde047" stroke-width="2"/>
+      <rect x="-27" y="-27" width="54" height="54" rx="8" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <text x="-13" y="16" font-family="'Arial Black', Impact, sans-serif" font-size="28" font-weight="900" fill="#000000" text-anchor="middle">J</text>
+      <text x="14" y="16" font-family="'Arial Black', Impact, sans-serif" font-size="28" font-weight="900" fill="#000000" text-anchor="middle">S</text>
     </g>
 
-    <!-- 5. BAR -->
-    <g id="symBar">
-      <linearGradient id="barGrad" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#ffffff"/>
-        <stop offset="40%" stop-color="#cbd5e1"/>
-        <stop offset="100%" stop-color="#475569"/>
-      </linearGradient>
-      <rect x="-40" y="-20" width="80" height="40" rx="6" fill="url(#barGrad)" stroke="#f59e0b" stroke-width="3.5"/>
-      <rect x="-36" y="-16" width="72" height="32" rx="4" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
-      <text x="0" y="4" font-family="'Arial Black', Impact, sans-serif" font-size="22" font-weight="900"
-            text-anchor="middle" dominant-baseline="central" fill="#0f172a" letter-spacing="2">BAR</text>
+    <!-- 5. NODE.JS -->
+    <g id="symNode">
+      <!-- Hexagon in emerald green -->
+      <polygon points="0,-32 28,-16 28,16 0,32 -28,16 -28,-16" fill="#339933" stroke="#86efac" stroke-width="2.5" stroke-linejoin="round"/>
+      <polygon points="0,-27 24,-13 24,13 0,27 -24,13 -24,-13" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/>
+      <text x="0" y="8" font-family="'Arial Black', Impact, sans-serif" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle">JS</text>
+      <!-- Leaf top -->
+      <circle cx="0" cy="-14" r="3.5" fill="#86efac"/>
     </g>
 
-    <!-- 6. STAR -->
-    <g id="symStar">
-      <radialGradient id="starGrad" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#fef08a"/>
-        <stop offset="50%" stop-color="#fbbf24"/>
-        <stop offset="100%" stop-color="#d97706"/>
-      </radialGradient>
-      <polygon points="0,-32 9,-10 32,-10 14,4 20,27 0,14 -20,27 -14,4 -32,-10 -9,-10"
-               fill="url(#starGrad)" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round" filter="url(#goldGlow)"/>
+    <!-- 6. GIT -->
+    <g id="symGit">
+      <g transform="rotate(45)">
+        <rect x="-22" y="-22" width="44" height="44" rx="8" fill="#f05032" stroke="#fdba74" stroke-width="2"/>
+        <g stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none">
+          <line x1="-8" y1="-8" x2="-8" y2="10"/>
+          <path d="M-8 0 Q 6 -2 8 8"/>
+        </g>
+        <circle cx="-8" cy="-8" r="4" fill="#ffffff"/>
+        <circle cx="-8" cy="10" r="4" fill="#ffffff"/>
+        <circle cx="8" cy="8" r="4" fill="#ffffff"/>
+      </g>
     </g>
 
-    <!-- Coin for Falling Shower -->
+    <!-- Falling Items: Gold Coin, Code Tag, Bracket -->
     <g id="goldCoin">
-      <circle cx="0" cy="0" r="10" fill="#f59e0b" stroke="#fef08a" stroke-width="2.5"/>
-      <circle cx="0" cy="0" r="6.5" fill="none" stroke="#b45309" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="10" fill="#f59e0b" stroke="#fef08a" stroke-width="2.2"/>
+      <circle cx="0" cy="0" r="6.5" fill="none" stroke="#b45309" stroke-width="1.2"/>
       <text x="0" y="1" font-family="'Arial Black',sans-serif" font-size="8" font-weight="900" text-anchor="middle" dominant-baseline="central" fill="#78350f">$</text>
     </g>
 
-    <!-- Reel Clip Path (Restricts symbols inside the reel window) -->
+    <g id="codeTag">
+      <rect x="-14" y="-8" width="28" height="16" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="0" y="1" font-family="'Courier New',monospace" font-size="9" font-weight="bold" fill="#38bdf8" text-anchor="middle" dominant-baseline="central">&lt;/&gt;</text>
+    </g>
+
+    <g id="codeBrace">
+      <rect x="-10" y="-8" width="20" height="16" rx="4" fill="#0f172a" stroke="#fde047" stroke-width="1.5"/>
+      <text x="0" y="1" font-family="'Courier New',monospace" font-size="10" font-weight="bold" fill="#fde047" text-anchor="middle" dominant-baseline="central">{ }</text>
+    </g>
+
+    <!-- Reel Window Clip -->
     <clipPath id="reelWindowClip">
       <rect x="44" y="60" width="812" height="236" rx="10"/>
     </clipPath>
@@ -175,8 +159,8 @@
 
   <style>
     @keyframes marqueeFlash {
-      0%, 100% { filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.6)) drop-shadow(0 0 16px rgba(245, 158, 11, 0.4)); }
-      50% { filter: drop-shadow(0 0 12px rgba(253, 224, 71, 0.95)) drop-shadow(0 0 28px rgba(239, 68, 68, 0.8)); }
+      0%, 100% { filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6)) drop-shadow(0 0 16px rgba(245, 158, 11, 0.4)); }
+      50% { filter: drop-shadow(0 0 12px rgba(253, 224, 71, 0.95)) drop-shadow(0 0 28px rgba(97, 218, 251, 0.8)); }
     }
     .marquee-badge {
       animation: marqueeFlash 1.6s ease-in-out infinite;
@@ -206,379 +190,374 @@
     
     <circle cx="35" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.00s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.00s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.00s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="61" cy="24" r="4" fill="#ef4444">
+    <circle cx="61" cy="24" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.08s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.08s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.08s" repeatCount="indefinite"/>
     </circle>
     <circle cx="87" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.16s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.16s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.16s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="113" cy="24" r="4" fill="#ef4444">
+    <circle cx="113" cy="24" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.24s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.24s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.24s" repeatCount="indefinite"/>
     </circle>
     <circle cx="139" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.32s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.32s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.32s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="165" cy="24" r="4" fill="#ef4444">
+    <circle cx="165" cy="24" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.40s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.40s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.40s" repeatCount="indefinite"/>
     </circle>
     <circle cx="191" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.48s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.48s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.48s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="217" cy="24" r="4" fill="#ef4444">
+    <circle cx="217" cy="24" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.56s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.56s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.56s" repeatCount="indefinite"/>
     </circle>
     <circle cx="243" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.64s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.64s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.64s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="269" cy="24" r="4" fill="#ef4444">
+    <circle cx="269" cy="24" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.72s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.72s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.72s" repeatCount="indefinite"/>
     </circle>
     <circle cx="295" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.80s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.80s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.80s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="321" cy="24" r="4" fill="#ef4444">
+    <circle cx="321" cy="24" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.88s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.88s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.88s" repeatCount="indefinite"/>
     </circle>
     <circle cx="347" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.96s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.96s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.96s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="373" cy="24" r="4" fill="#ef4444">
+    <circle cx="373" cy="24" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.04s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="1.04s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="1.04s" repeatCount="indefinite"/>
     </circle>
     <circle cx="399" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.12s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="1.12s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="1.12s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="425" cy="24" r="4" fill="#ef4444">
+    <circle cx="425" cy="24" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.20s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="1.20s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="1.20s" repeatCount="indefinite"/>
     </circle>
     <circle cx="451" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.28s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="1.28s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="1.28s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="477" cy="24" r="4" fill="#ef4444">
+    <circle cx="477" cy="24" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.36s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="1.36s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="1.36s" repeatCount="indefinite"/>
     </circle>
     <circle cx="503" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.44s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="1.44s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="1.44s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="529" cy="24" r="4" fill="#ef4444">
+    <circle cx="529" cy="24" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.52s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="1.52s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="1.52s" repeatCount="indefinite"/>
     </circle>
     <circle cx="555" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.00s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.00s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.00s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="581" cy="24" r="4" fill="#ef4444">
+    <circle cx="581" cy="24" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.08s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.08s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.08s" repeatCount="indefinite"/>
     </circle>
     <circle cx="607" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.16s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.16s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.16s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="633" cy="24" r="4" fill="#ef4444">
+    <circle cx="633" cy="24" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.24s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.24s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.24s" repeatCount="indefinite"/>
     </circle>
     <circle cx="659" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.32s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.32s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.32s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="685" cy="24" r="4" fill="#ef4444">
+    <circle cx="685" cy="24" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.40s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.40s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.40s" repeatCount="indefinite"/>
     </circle>
     <circle cx="711" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.48s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.48s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.48s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="737" cy="24" r="4" fill="#ef4444">
+    <circle cx="737" cy="24" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.56s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.56s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.56s" repeatCount="indefinite"/>
     </circle>
     <circle cx="763" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.64s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.64s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.64s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="789" cy="24" r="4" fill="#ef4444">
+    <circle cx="789" cy="24" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.72s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.72s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.72s" repeatCount="indefinite"/>
     </circle>
     <circle cx="815" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.80s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.80s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.80s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="841" cy="24" r="4" fill="#ef4444">
+    <circle cx="841" cy="24" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.88s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.88s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.88s" repeatCount="indefinite"/>
     </circle>
     <circle cx="867" cy="24" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.96s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.96s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.96s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="874" cy="45" r="4" fill="#ef4444">
+    <circle cx="874" cy="45" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.04s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="1.04s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="1.04s" repeatCount="indefinite"/>
     </circle>
     <circle cx="874" cy="71" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.12s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="1.12s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="1.12s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="874" cy="97" r="4" fill="#ef4444">
+    <circle cx="874" cy="97" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.20s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="1.20s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="1.20s" repeatCount="indefinite"/>
     </circle>
     <circle cx="874" cy="123" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.28s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="1.28s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="1.28s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="874" cy="149" r="4" fill="#ef4444">
+    <circle cx="874" cy="149" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.36s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="1.36s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="1.36s" repeatCount="indefinite"/>
     </circle>
     <circle cx="874" cy="175" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.44s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="1.44s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="1.44s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="874" cy="201" r="4" fill="#ef4444">
+    <circle cx="874" cy="201" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.52s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="1.52s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="1.52s" repeatCount="indefinite"/>
     </circle>
     <circle cx="874" cy="227" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.00s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.00s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.00s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="874" cy="253" r="4" fill="#ef4444">
+    <circle cx="874" cy="253" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.08s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.08s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.08s" repeatCount="indefinite"/>
     </circle>
     <circle cx="874" cy="279" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.16s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.16s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.16s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="874" cy="305" r="4" fill="#ef4444">
+    <circle cx="874" cy="305" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.24s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.24s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.24s" repeatCount="indefinite"/>
     </circle>
     <circle cx="860" cy="334" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.32s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.32s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.32s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="834" cy="334" r="4" fill="#ef4444">
+    <circle cx="834" cy="334" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.40s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.40s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.40s" repeatCount="indefinite"/>
     </circle>
     <circle cx="808" cy="334" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.48s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.48s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.48s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="782" cy="334" r="4" fill="#ef4444">
+    <circle cx="782" cy="334" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.56s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.56s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.56s" repeatCount="indefinite"/>
     </circle>
     <circle cx="756" cy="334" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.64s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.64s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.64s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="730" cy="334" r="4" fill="#ef4444">
+    <circle cx="730" cy="334" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.72s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.72s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.72s" repeatCount="indefinite"/>
     </circle>
     <circle cx="704" cy="334" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.80s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.80s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.80s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="678" cy="334" r="4" fill="#ef4444">
+    <circle cx="678" cy="334" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.88s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.88s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.88s" repeatCount="indefinite"/>
     </circle>
     <circle cx="652" cy="334" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.96s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.96s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.96s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="626" cy="334" r="4" fill="#ef4444">
+    <circle cx="626" cy="334" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.04s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="1.04s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="1.04s" repeatCount="indefinite"/>
     </circle>
     <circle cx="600" cy="334" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.12s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="1.12s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="1.12s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="574" cy="334" r="4" fill="#ef4444">
+    <circle cx="574" cy="334" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.20s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="1.20s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="1.20s" repeatCount="indefinite"/>
     </circle>
     <circle cx="548" cy="334" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.28s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="1.28s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="1.28s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="522" cy="334" r="4" fill="#ef4444">
+    <circle cx="522" cy="334" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.36s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="1.36s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="1.36s" repeatCount="indefinite"/>
     </circle>
     <circle cx="496" cy="334" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.44s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="1.44s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="1.44s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="470" cy="334" r="4" fill="#ef4444">
+    <circle cx="470" cy="334" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.52s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="1.52s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="1.52s" repeatCount="indefinite"/>
     </circle>
     <circle cx="444" cy="334" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.60s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="1.60s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="1.60s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="418" cy="334" r="4" fill="#ef4444">
+    <circle cx="418" cy="334" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.08s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.08s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.08s" repeatCount="indefinite"/>
     </circle>
     <circle cx="392" cy="334" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.16s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.16s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.16s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="366" cy="334" r="4" fill="#ef4444">
+    <circle cx="366" cy="334" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.24s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.24s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.24s" repeatCount="indefinite"/>
     </circle>
     <circle cx="340" cy="334" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.32s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.32s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.32s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="314" cy="334" r="4" fill="#ef4444">
+    <circle cx="314" cy="334" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.40s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.40s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.40s" repeatCount="indefinite"/>
     </circle>
     <circle cx="288" cy="334" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.48s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.48s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.48s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="262" cy="334" r="4" fill="#ef4444">
+    <circle cx="262" cy="334" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.56s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.56s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.56s" repeatCount="indefinite"/>
     </circle>
     <circle cx="236" cy="334" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.64s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.64s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.64s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="210" cy="334" r="4" fill="#ef4444">
+    <circle cx="210" cy="334" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.72s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.72s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.72s" repeatCount="indefinite"/>
     </circle>
     <circle cx="184" cy="334" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.80s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.80s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.80s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="158" cy="334" r="4" fill="#ef4444">
+    <circle cx="158" cy="334" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.88s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.88s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.88s" repeatCount="indefinite"/>
     </circle>
     <circle cx="132" cy="334" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.96s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.96s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.96s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="106" cy="334" r="4" fill="#ef4444">
+    <circle cx="106" cy="334" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.04s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="1.04s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="1.04s" repeatCount="indefinite"/>
     </circle>
     <circle cx="80" cy="334" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.12s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="1.12s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="1.12s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="54" cy="334" r="4" fill="#ef4444">
+    <circle cx="54" cy="334" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.20s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="1.20s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="1.20s" repeatCount="indefinite"/>
     </circle>
     <circle cx="24" cy="315" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.28s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="1.28s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="1.28s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="24" cy="289" r="4" fill="#ef4444">
+    <circle cx="24" cy="289" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.36s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="1.36s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="1.36s" repeatCount="indefinite"/>
     </circle>
     <circle cx="24" cy="263" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.44s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="1.44s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="1.44s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="24" cy="237" r="4" fill="#ef4444">
+    <circle cx="24" cy="237" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="1.52s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="1.52s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="1.52s" repeatCount="indefinite"/>
     </circle>
     <circle cx="24" cy="211" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.00s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.00s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.00s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="24" cy="185" r="4" fill="#ef4444">
+    <circle cx="24" cy="185" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.08s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.08s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.08s" repeatCount="indefinite"/>
     </circle>
     <circle cx="24" cy="159" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.16s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.16s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.16s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="24" cy="133" r="4" fill="#ef4444">
+    <circle cx="24" cy="133" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.24s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.24s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.24s" repeatCount="indefinite"/>
     </circle>
     <circle cx="24" cy="107" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.32s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.32s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.32s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="24" cy="81" r="4" fill="#ef4444">
+    <circle cx="24" cy="81" r="4" fill="#61dafb">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.40s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#ef4444;#fde047;#ef4444" dur="2.4s" begin="0.40s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#61dafb;#fde047;#61dafb" dur="2.4s" begin="0.40s" repeatCount="indefinite"/>
     </circle>
     <circle cx="24" cy="55" r="4" fill="#fde047">
       <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.48s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="2.4s" begin="0.48s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#fde047;#38bdf8;#fde047" dur="2.4s" begin="0.48s" repeatCount="indefinite"/>
     </circle>
   </g>
 
-  <!-- ── 3. Marquee Top Banner: ★ 777 JACKPOT ★ ── -->
+  <!-- ── 3. Marquee Top Banner: ★ FULL-STACK JACKPOT ★ ── -->
   <g class="marquee-badge" transform="translate(450, 42)">
-    <!-- Plate -->
-    <rect x="-140" y="-17" width="280" height="34" rx="8" fill="#120619" stroke="url(#goldBevel)" stroke-width="2.5"/>
-    <rect x="-136" y="-13" width="272" height="26" rx="6" fill="none" stroke="rgba(253, 224, 71, 0.4)" stroke-width="1"/>
-    <!-- Animated Color Pulsing Jackpot Text -->
-    <text x="0" y="2" font-family="'Arial Black', Impact, sans-serif" font-size="16" font-weight="900"
-          text-anchor="middle" dominant-baseline="central" letter-spacing="4" fill="#fde047">
-      <animate attributeName="fill" values="#fde047;#ef4444;#fde047" dur="1.2s" repeatCount="indefinite"/>
-      ★  7 7 7   J A C K P O T  ★
+    <rect x="-175" y="-17" width="350" height="34" rx="8" fill="#120619" stroke="url(#goldBevel)" stroke-width="2.5"/>
+    <rect x="-171" y="-13" width="342" height="26" rx="6" fill="none" stroke="rgba(253, 224, 71, 0.4)" stroke-width="1"/>
+    <!-- Animated Color Pulsing Title -->
+    <text x="0" y="2" font-family="'Arial Black', Impact, sans-serif" font-size="15" font-weight="900"
+          text-anchor="middle" dominant-baseline="central" letter-spacing="3" fill="#fde047">
+      <animate attributeName="fill" values="#fde047;#38bdf8;#61dafb;#fde047" dur="2s" repeatCount="indefinite"/>
+      ★  F U L L - S T A C K   J A C K P O T  ★
     </text>
   </g>
 
   <!-- ── 4. Reel Housing Window ── -->
-  <!-- Outer Window Frame -->
   <rect x="42" y="58" width="816" height="240" rx="12" fill="url(#innerWindowBg)" stroke="#4a1d4a" stroke-width="3"/>
   <rect x="42" y="58" width="816" height="240" rx="12" fill="none" stroke="url(#goldBevel)" stroke-width="1.5" opacity="0.7"/>
 
   <!-- REELS CONTENT (Clipped to Window) -->
   <g clip-path="url(#reelWindowClip)">
-    <!-- Column 1 Background -->
     <rect x="44" y="60" width="270" height="236" fill="#08030d"/>
-    <!-- Column 2 Background -->
     <rect x="314" y="60" width="272" height="236" fill="#0b0412"/>
-    <!-- Column 3 Background -->
     <rect x="586" y="60" width="270" height="236" fill="#08030d"/>
 
     <!-- Reel 1 Animated Strip (Center at x = 179) -->
@@ -593,18 +572,18 @@
     
       
         <g transform="translate(179, 0)">
-          <use href="#symDiamond" x="0" y="-322"/>
-          <use href="#symStar" x="0" y="-222"/>
-          <use href="#symBar" x="0" y="-122"/>
-          <use href="#symBell" x="0" y="-22"/>
-          <use href="#symCherry" x="0" y="78"/>
-          <use href="#sym7" x="0" y="178"/>
-          <use href="#symDiamond" x="0" y="278"/>
-          <use href="#symCherry" x="0" y="378"/>
-          <use href="#symBell" x="0" y="478"/>
-          <use href="#symBar" x="0" y="578"/>
-          <use href="#symStar" x="0" y="678"/>
-          <use href="#sym7" x="0" y="778"/>
+          <use href="#symPython" x="0" y="-322"/>
+          <use href="#symTS" x="0" y="-222"/>
+          <use href="#symJS" x="0" y="-122"/>
+          <use href="#symNode" x="0" y="-22"/>
+          <use href="#symGit" x="0" y="78"/>
+          <use href="#symReact" x="0" y="178"/>
+          <use href="#symPython" x="0" y="278"/>
+          <use href="#symTS" x="0" y="378"/>
+          <use href="#symJS" x="0" y="478"/>
+          <use href="#symNode" x="0" y="578"/>
+          <use href="#symGit" x="0" y="678"/>
+          <use href="#symReact" x="0" y="778"/>
         </g>
     </g>
 
@@ -620,18 +599,18 @@
     
       
         <g transform="translate(450, 0)">
-          <use href="#symDiamond" x="0" y="-322"/>
-          <use href="#symStar" x="0" y="-222"/>
-          <use href="#symBar" x="0" y="-122"/>
-          <use href="#symBell" x="0" y="-22"/>
-          <use href="#symCherry" x="0" y="78"/>
-          <use href="#sym7" x="0" y="178"/>
-          <use href="#symDiamond" x="0" y="278"/>
-          <use href="#symCherry" x="0" y="378"/>
-          <use href="#symBell" x="0" y="478"/>
-          <use href="#symBar" x="0" y="578"/>
-          <use href="#symStar" x="0" y="678"/>
-          <use href="#sym7" x="0" y="778"/>
+          <use href="#symPython" x="0" y="-322"/>
+          <use href="#symTS" x="0" y="-222"/>
+          <use href="#symJS" x="0" y="-122"/>
+          <use href="#symNode" x="0" y="-22"/>
+          <use href="#symGit" x="0" y="78"/>
+          <use href="#symReact" x="0" y="178"/>
+          <use href="#symPython" x="0" y="278"/>
+          <use href="#symTS" x="0" y="378"/>
+          <use href="#symJS" x="0" y="478"/>
+          <use href="#symNode" x="0" y="578"/>
+          <use href="#symGit" x="0" y="678"/>
+          <use href="#symReact" x="0" y="778"/>
         </g>
     </g>
 
@@ -647,18 +626,18 @@
     
       
         <g transform="translate(721, 0)">
-          <use href="#symDiamond" x="0" y="-322"/>
-          <use href="#symStar" x="0" y="-222"/>
-          <use href="#symBar" x="0" y="-122"/>
-          <use href="#symBell" x="0" y="-22"/>
-          <use href="#symCherry" x="0" y="78"/>
-          <use href="#sym7" x="0" y="178"/>
-          <use href="#symDiamond" x="0" y="278"/>
-          <use href="#symCherry" x="0" y="378"/>
-          <use href="#symBell" x="0" y="478"/>
-          <use href="#symBar" x="0" y="578"/>
-          <use href="#symStar" x="0" y="678"/>
-          <use href="#sym7" x="0" y="778"/>
+          <use href="#symPython" x="0" y="-322"/>
+          <use href="#symTS" x="0" y="-222"/>
+          <use href="#symJS" x="0" y="-122"/>
+          <use href="#symNode" x="0" y="-22"/>
+          <use href="#symGit" x="0" y="78"/>
+          <use href="#symReact" x="0" y="178"/>
+          <use href="#symPython" x="0" y="278"/>
+          <use href="#symTS" x="0" y="378"/>
+          <use href="#symJS" x="0" y="478"/>
+          <use href="#symNode" x="0" y="578"/>
+          <use href="#symGit" x="0" y="678"/>
+          <use href="#symReact" x="0" y="778"/>
         </g>
     </g>
 
@@ -680,24 +659,25 @@
   <!-- ── 5. Horizontal Center Win Line / Laser Beam ── -->
   <!-- Target Center Line: y = 178 -->
   <g>
-    <!-- Base Red Laser -->
-    <line x1="38" y1="178" x2="862" y2="178" stroke="#ef4444" stroke-width="1.8" opacity="0.6"/>
-    <!-- Animated Golden Laser Beam on Jackpot (bursts from 4.4s to 8.0s) -->
-    <line x1="42" y1="178" x2="858" y2="178" stroke="#fde047" stroke-width="3.5" filter="url(#laserGlow)" opacity="0">
+    <line x1="38" y1="178" x2="862" y2="178" stroke="#38bdf8" stroke-width="1.8" opacity="0.6"/>
+    <!-- Animated Golden/Cyan Laser Beam on Jackpot (bursts from 4.4s to 8.0s) -->
+    <line x1="42" y1="178" x2="858" y2="178" stroke="#61dafb" stroke-width="3.5" filter="url(#laserGlow)" opacity="0">
       <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
                keyTimes="0; 0.54; 0.56; 0.94; 0.96; 1"
                values="0; 0; 1; 1; 0; 0"/>
+      <animate attributeName="stroke" dur="1s" repeatCount="indefinite"
+               values="#61dafb;#fde047;#61dafb"/>
       <animate attributeName="stroke-width" dur="0.8s" repeatCount="indefinite"
                values="3;5.5;3"/>
     </line>
 
     <!-- Left Payline Arrow -->
-    <polygon points="40,178 30,172 30,184" fill="#fde047" stroke="#b45309" stroke-width="1.2"/>
+    <polygon points="40,178 30,172 30,184" fill="#38bdf8" stroke="#0369a1" stroke-width="1.2"/>
     <!-- Right Payline Arrow -->
-    <polygon points="860,178 870,172 870,184" fill="#fde047" stroke="#b45309" stroke-width="1.2"/>
+    <polygon points="860,178 870,172 870,184" fill="#38bdf8" stroke="#0369a1" stroke-width="1.2"/>
   </g>
 
-  <!-- ── 6. Falling Gold Coins Shower & Sparkles on Jackpot ── -->
+  <!-- ── 6. Falling Developer Rain & Sparkles on Jackpot ── -->
   <g pointer-events="none">
     
       <g opacity="0">
@@ -709,7 +689,7 @@
                  values="180,-30; 180,-30; 90,400; 90,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 360"/>
           <use href="#goldCoin"/>
         </g>
@@ -723,9 +703,9 @@
                  values="240,-30; 240,-30; 195,400; 195,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 720"/>
-          <use href="#goldCoin"/>
+          <use href="#codeTag"/>
         </g>
       </g>
       <g opacity="0">
@@ -737,9 +717,9 @@
                  values="310,-30; 310,-30; 310,400; 310,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 1080"/>
-          <use href="#goldCoin"/>
+          <use href="#codeBrace"/>
         </g>
       </g>
       <g opacity="0">
@@ -751,7 +731,7 @@
                  values="370,-30; 370,-30; 415,400; 415,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 360"/>
           <use href="#goldCoin"/>
         </g>
@@ -765,9 +745,9 @@
                  values="430,-30; 430,-30; 520,400; 520,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 720"/>
-          <use href="#goldCoin"/>
+          <use href="#codeTag"/>
         </g>
       </g>
       <g opacity="0">
@@ -779,9 +759,9 @@
                  values="480,-30; 480,-30; 390,400; 390,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 1080"/>
-          <use href="#goldCoin"/>
+          <use href="#codeBrace"/>
         </g>
       </g>
       <g opacity="0">
@@ -793,7 +773,7 @@
                  values="540,-30; 540,-30; 495,400; 495,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 360"/>
           <use href="#goldCoin"/>
         </g>
@@ -807,9 +787,9 @@
                  values="600,-30; 600,-30; 600,400; 600,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 720"/>
-          <use href="#goldCoin"/>
+          <use href="#codeTag"/>
         </g>
       </g>
       <g opacity="0">
@@ -821,9 +801,9 @@
                  values="670,-30; 670,-30; 715,400; 715,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 1080"/>
-          <use href="#goldCoin"/>
+          <use href="#codeBrace"/>
         </g>
       </g>
       <g opacity="0">
@@ -835,7 +815,7 @@
                  values="720,-30; 720,-30; 810,400; 810,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 360"/>
           <use href="#goldCoin"/>
         </g>
@@ -849,9 +829,9 @@
                  values="260,-30; 260,-30; 170,400; 170,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 720"/>
-          <use href="#goldCoin"/>
+          <use href="#codeTag"/>
         </g>
       </g>
       <g opacity="0">
@@ -863,9 +843,9 @@
                  values="340,-30; 340,-30; 295,400; 295,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 1080"/>
-          <use href="#goldCoin"/>
+          <use href="#codeBrace"/>
         </g>
       </g>
       <g opacity="0">
@@ -877,7 +857,7 @@
                  values="400,-30; 400,-30; 400,400; 400,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 360"/>
           <use href="#goldCoin"/>
         </g>
@@ -891,9 +871,9 @@
                  values="460,-30; 460,-30; 505,400; 505,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 720"/>
-          <use href="#goldCoin"/>
+          <use href="#codeTag"/>
         </g>
       </g>
       <g opacity="0">
@@ -905,9 +885,9 @@
                  values="520,-30; 520,-30; 610,400; 610,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 1080"/>
-          <use href="#goldCoin"/>
+          <use href="#codeBrace"/>
         </g>
       </g>
       <g opacity="0">
@@ -919,7 +899,7 @@
                  values="580,-30; 580,-30; 490,400; 490,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 360"/>
           <use href="#goldCoin"/>
         </g>
@@ -933,9 +913,9 @@
                  values="640,-30; 640,-30; 595,400; 595,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 720"/>
-          <use href="#goldCoin"/>
+          <use href="#codeTag"/>
         </g>
       </g>
       <g opacity="0">
@@ -947,9 +927,9 @@
                  values="700,-30; 700,-30; 700,400; 700,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 1080"/>
-          <use href="#goldCoin"/>
+          <use href="#codeBrace"/>
         </g>
       </g>
       <g opacity="0">
@@ -961,7 +941,7 @@
                  values="320,-30; 320,-30; 365,400; 365,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 360"/>
           <use href="#goldCoin"/>
         </g>
@@ -975,9 +955,9 @@
                  values="380,-30; 380,-30; 470,400; 470,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 720"/>
-          <use href="#goldCoin"/>
+          <use href="#codeTag"/>
         </g>
       </g>
       <g opacity="0">
@@ -989,9 +969,9 @@
                  values="450,-30; 450,-30; 360,400; 360,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 1080"/>
-          <use href="#goldCoin"/>
+          <use href="#codeBrace"/>
         </g>
       </g>
       <g opacity="0">
@@ -1003,7 +983,7 @@
                  values="510,-30; 510,-30; 465,400; 465,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 360"/>
           <use href="#goldCoin"/>
         </g>
@@ -1017,9 +997,9 @@
                  values="570,-30; 570,-30; 570,400; 570,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 720"/>
-          <use href="#goldCoin"/>
+          <use href="#codeTag"/>
         </g>
       </g>
       <g opacity="0">
@@ -1031,9 +1011,9 @@
                  values="630,-30; 630,-30; 675,400; 675,400"
                  calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
-          <animateTransform attributeName="transform" type="rotate" dur="1.2s" repeatCount="indefinite"
+          <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 1080"/>
-          <use href="#goldCoin"/>
+          <use href="#codeBrace"/>
         </g>
       </g>
     
@@ -1045,7 +1025,7 @@
                  keyTimes="0; 0.550; 0.581; 0.625; 1"
                  values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
-              fill="#fde047" filter="url(#goldGlow)"/>
+              fill="#38bdf8" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(220, 230)" opacity="0">
@@ -1056,7 +1036,7 @@
                  keyTimes="0; 0.565; 0.596; 0.640; 1"
                  values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
-              fill="#ffffff" filter="url(#goldGlow)"/>
+              fill="#fde047" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(310, 140)" opacity="0">
@@ -1067,7 +1047,7 @@
                  keyTimes="0; 0.580; 0.611; 0.655; 1"
                  values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
-              fill="#fde047" filter="url(#goldGlow)"/>
+              fill="#ffffff" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(450, 95)" opacity="0">
@@ -1078,7 +1058,7 @@
                  keyTimes="0; 0.595; 0.626; 0.670; 1"
                  values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
-              fill="#ffffff" filter="url(#goldGlow)"/>
+              fill="#38bdf8" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(480, 250)" opacity="0">
@@ -1089,7 +1069,7 @@
                  keyTimes="0; 0.610; 0.641; 0.685; 1"
                  values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
-              fill="#fde047" filter="url(#goldGlow)"/>
+              fill="#fde047" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(590, 120)" opacity="0">
@@ -1100,7 +1080,7 @@
                  keyTimes="0; 0.625; 0.656; 0.700; 1"
                  values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
-              fill="#ffffff" filter="url(#goldGlow)"/>
+              fill="#ffffff" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(620, 230)" opacity="0">
@@ -1111,7 +1091,7 @@
                  keyTimes="0; 0.640; 0.671; 0.715; 1"
                  values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
-              fill="#fde047" filter="url(#goldGlow)"/>
+              fill="#38bdf8" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(720, 150)" opacity="0">
@@ -1122,7 +1102,7 @@
                  keyTimes="0; 0.655; 0.686; 0.730; 1"
                  values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
-              fill="#ffffff" filter="url(#goldGlow)"/>
+              fill="#fde047" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(150, 178)" opacity="0">
@@ -1133,7 +1113,7 @@
                  keyTimes="0; 0.670; 0.701; 0.745; 1"
                  values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
-              fill="#fde047" filter="url(#goldGlow)"/>
+              fill="#ffffff" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(280, 178)" opacity="0">
@@ -1144,7 +1124,7 @@
                  keyTimes="0; 0.685; 0.716; 0.760; 1"
                  values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
-              fill="#ffffff" filter="url(#goldGlow)"/>
+              fill="#38bdf8" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(410, 178)" opacity="0">
@@ -1155,7 +1135,7 @@
                  keyTimes="0; 0.700; 0.731; 0.775; 1"
                  values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
-              fill="#fde047" filter="url(#goldGlow)"/>
+              fill="#fde047" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(490, 178)" opacity="0">
@@ -1166,7 +1146,7 @@
                  keyTimes="0; 0.715; 0.746; 0.790; 1"
                  values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
-              fill="#ffffff" filter="url(#goldGlow)"/>
+              fill="#ffffff" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(620, 178)" opacity="0">
@@ -1177,7 +1157,7 @@
                  keyTimes="0; 0.730; 0.761; 0.805; 1"
                  values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
-              fill="#fde047" filter="url(#goldGlow)"/>
+              fill="#38bdf8" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(750, 178)" opacity="0">
@@ -1188,7 +1168,7 @@
                  keyTimes="0; 0.745; 0.776; 0.820; 1"
                  values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
-              fill="#ffffff" filter="url(#goldGlow)"/>
+              fill="#fde047" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(350, 220)" opacity="0">
@@ -1199,7 +1179,7 @@
                  keyTimes="0; 0.760; 0.791; 0.835; 1"
                  values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
-              fill="#fde047" filter="url(#goldGlow)"/>
+              fill="#ffffff" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(550, 110)" opacity="0">
@@ -1210,7 +1190,7 @@
                  keyTimes="0; 0.775; 0.806; 0.850; 1"
                  values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
-              fill="#ffffff" filter="url(#goldGlow)"/>
+              fill="#38bdf8" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
   </g>
@@ -1218,14 +1198,14 @@
   <!-- ── 7. Bottom Chrome Cabinet Footer Strip ── -->
   <g transform="translate(450, 314)">
     <rect x="-380" y="-10" width="760" height="20" rx="5" fill="#13091c" stroke="#3b1d42" stroke-width="1.5"/>
-    <text x="-240" y="2" font-family="'Courier New', monospace" font-size="10" font-weight="bold" fill="#a855f7" text-anchor="middle" letter-spacing="2">
-      SPIN STATUS: <tspan fill="#4ade80">ONLINE</tspan>
+    <text x="-240" y="2" font-family="'Courier New', monospace" font-size="10" font-weight="bold" fill="#38bdf8" text-anchor="middle" letter-spacing="2">
+      STACK MATCH: <tspan fill="#4ade80">100%</tspan>
     </text>
     <text x="0" y="2" font-family="'Courier New', monospace" font-size="10" font-weight="bold" fill="#f59e0b" text-anchor="middle" letter-spacing="3">
-      ★ PAYOUT 777: 10,000x ★
+      ★ MATCH 3: TRIPLE REACT ★
     </text>
     <text x="240" y="2" font-family="'Courier New', monospace" font-size="10" font-weight="bold" fill="#a855f7" text-anchor="middle" letter-spacing="2">
-      ODDS: <tspan fill="#38bdf8">1 / 1</tspan>
+      STATUS: <tspan fill="#38bdf8">READY TO HIRE</tspan>
     </text>
   </g>
 </svg>
