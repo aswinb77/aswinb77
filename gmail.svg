@@ -1,9 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <g transform="translate(6, 12)">
+  <g transform="translate(0.8, 8) scale(1.2)">
+    <!-- Left Blue Pillar -->
     <path fill="#4285F4" d="M12 40V19.4L0 10.4V36c0 2.2 1.8 4 4 4h8z"/>
+    <!-- Right Green Pillar -->
     <path fill="#34A853" d="M40 40h8c2.2 0 4-1.8 4-4V10.4L40 19.4V40z"/>
+    <!-- Center Red Chevron -->
     <path fill="#EA4335" d="M12 19.4V0L26 10.5 40 0v19.4L26 29.9 12 19.4z"/>
+    <!-- Top Right Yellow Corner -->
     <path fill="#FBBC05" d="M40 0l4.5 3.4c2.2 1.6 3.5 4.2 3.5 6.9v0L40 19.4V0z"/>
+    <!-- Top Left Red Corner -->
     <path fill="#C5221F" d="M0 10.4c0-2.7 1.3-5.3 3.5-6.9L12 0v19.4L0 10.4z"/>
   </g>
 </svg>

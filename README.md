@@ -4,7 +4,7 @@
 
 <br/><br/>
 
-<a href="mailto:aswinbiju2004@gmail.com" title="Email: aswinbiju2004@gmail.com"><img src="gmail.svg" width="52" height="52" alt="Gmail" valign="middle"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/aswinb77" title="GitHub: @aswinb77"><img src="github.svg" width="52" height="52" alt="GitHub" valign="middle"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/aswin-biju7/" title="LinkedIn: @aswin-biju7"><img src="linkedin.svg" width="52" height="52" alt="LinkedIn" valign="middle"/></a>
+<a href="mailto:aswinbiju2004@gmail.com" title="Email: aswinbiju2004@gmail.com"><img src="gmail.svg" width="54" height="54" alt="Gmail" valign="middle"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/aswinb77" title="GitHub: @aswinb77"><img src="github.svg" width="54" height="54" alt="GitHub" valign="middle"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/aswin-biju7/" title="LinkedIn: @aswin-biju7"><img src="linkedin.svg" width="54" height="54" alt="LinkedIn" valign="middle"/></a>
 
 <br/>
 
