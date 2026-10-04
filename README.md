@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="slot_machine.svg" alt="Aswin Biju • Full-Stack Dev Slot Machine" width="100%"/>
+<img src="blackhole.svg" alt="Aswin Biju • The Singularity" width="100%"/>
 
 <br/><br/>
 
