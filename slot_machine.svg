@@ -3,38 +3,49 @@
   <defs>
     <!-- Cabinet Gradients -->
     <linearGradient id="cabGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#211536"/>
-      <stop offset="25%" stop-color="#120a1f"/>
-      <stop offset="75%" stop-color="#090510"/>
-      <stop offset="100%" stop-color="#180e28"/>
+      <stop offset="0%" stop-color="#24153b"/>
+      <stop offset="25%" stop-color="#140b22"/>
+      <stop offset="75%" stop-color="#0a0512"/>
+      <stop offset="100%" stop-color="#1a0f2b"/>
     </linearGradient>
 
+    <!-- 24K Gold Chrome Bevel -->
     <linearGradient id="goldBevel" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#fef08a"/>
-      <stop offset="25%" stop-color="#fbbf24"/>
-      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="15%" stop-color="#fef08a"/>
+      <stop offset="45%" stop-color="#f59e0b"/>
       <stop offset="75%" stop-color="#b45309"/>
       <stop offset="100%" stop-color="#78350f"/>
     </linearGradient>
 
+    <!-- Titanium Steel Bevel -->
+    <linearGradient id="steelBevel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="30%" stop-color="#cbd5e1"/>
+      <stop offset="70%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+
+    <!-- Recessed Window Background -->
     <linearGradient id="innerWindowBg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#060209"/>
-      <stop offset="100%" stop-color="#0a0311"/>
+      <stop offset="0%" stop-color="#050208"/>
+      <stop offset="50%" stop-color="#090411"/>
+      <stop offset="100%" stop-color="#050208"/>
     </linearGradient>
 
     <!-- Cylindrical Drum 3D Shadows -->
     <linearGradient id="cylinderShadow" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#000000" stop-opacity="0.95"/>
-      <stop offset="18%" stop-color="#000000" stop-opacity="0.25"/>
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.96"/>
+      <stop offset="16%" stop-color="#000000" stop-opacity="0.25"/>
       <stop offset="50%" stop-color="#000000" stop-opacity="0"/>
-      <stop offset="82%" stop-color="#000000" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
+      <stop offset="84%" stop-color="#000000" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.96"/>
     </linearGradient>
 
-    <!-- Diagonal Glass Specular Reflection -->
+    <!-- Diagonal Acrylic Glass Reflection -->
     <linearGradient id="glassReflection" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.09"/>
-      <stop offset="35%" stop-color="#ffffff" stop-opacity="0.03"/>
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="35%" stop-color="#ffffff" stop-opacity="0.02"/>
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
 
@@ -63,12 +74,12 @@
       </feMerge>
     </filter>
 
-    <!-- ── TECH STACK SYMBOLS (Centered at (0, 0)) ── -->
+    <!-- ── 3D BESPOKE TECH SYMBOLS (Centered at (0, 0)) ── -->
 
-    <!-- 1. REACT -->
+    <!-- 1. REACT (Cyan Atomic Core) -->
     <g id="symReact">
-      <circle cx="0" cy="0" r="32" fill="#087ea4" opacity="0.4" filter="url(#cyanGlow)"/>
-      <circle cx="0" cy="0" r="8" fill="#61dafb" filter="url(#cyanGlow)"/>
+      <circle cx="0" cy="0" r="32" fill="#087ea4" opacity="0.45" filter="url(#cyanGlow)"/>
+      <circle cx="0" cy="0" r="8.5" fill="#61dafb" filter="url(#cyanGlow)"/>
       <circle cx="0" cy="0" r="4.5" fill="#ffffff"/>
       <ellipse cx="0" cy="0" rx="36" ry="14" fill="none" stroke="#61dafb" stroke-width="3.5"/>
       <ellipse cx="0" cy="0" rx="36" ry="14" fill="none" stroke="#61dafb" stroke-width="3.5" transform="rotate(60)"/>
@@ -76,43 +87,44 @@
       <circle cx="0" cy="0" r="40" fill="none" stroke="url(#goldBevel)" stroke-width="1.8" stroke-dasharray="8 5" opacity="0.85"/>
     </g>
 
-    <!-- 2. PYTHON -->
+    <!-- 2. NODE.JS (Emerald Hexagon Gem) -->
+    <g id="symNode">
+      <circle cx="0" cy="0" r="32" fill="#15803d" opacity="0.4" filter="url(#cyanGlow)"/>
+      <polygon points="0,-32 28,-16 28,16 0,32 -28,16 -28,-16" fill="#16a34a" stroke="#86efac" stroke-width="2.5" stroke-linejoin="round"/>
+      <polygon points="0,-27 24,-13 24,13 0,27 -24,13 -24,-13" fill="#15803d" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/>
+      <text x="0" y="8" font-family="'Arial Black', Impact, sans-serif" font-size="22" font-weight="900" fill="#ffffff" text-anchor="middle">JS</text>
+      <circle cx="0" cy="-14" r="3.5" fill="#86efac"/>
+    </g>
+
+    <!-- 3. PYTHON (Interlocking Blue & Gold Snakes) -->
     <g id="symPython">
-      <circle cx="0" cy="0" r="30" fill="#387eb8" opacity="0.35" filter="url(#goldGlow)"/>
+      <circle cx="0" cy="0" r="30" fill="#387eb8" opacity="0.4" filter="url(#goldGlow)"/>
       <g transform="translate(-32, -32) scale(0.5)">
-        <path fill="#387eb8" stroke="#60a5fa" stroke-width="1.5" d="M63.5 1.5c-15.6 0-26 6.8-26 20.3v15h26v4.5H23.8C10.5 41.3 0 51.5 0 66.8c0 15.6 11.2 26 26.5 26h9v-13c0-14.8 12.5-26 27-26h26V36c0-14.2-11.8-25.5-25-34.5zm-14 8a4.5 4.5 0 110 9 4.5 4.5 0 010-9z"/>
-        <path fill="#ffe052" stroke="#fef08a" stroke-width="1.5" d="M64.5 126.5c15.6 0 26-6.8 26-20.3v-15h-26v-4.5h39.7c13.3 0 23.8-10.2 23.8-25.5 0-15.6-11.2-26-26.5-26h-9v13c0 14.8-12.5 26-27 26h-26V92c0 14.2 11.8 25.5 25 34.5zm14-8a4.5 4.5 0 110-9 4.5 4.5 0 010 9z"/>
+        <path fill="#387eb8" stroke="#60a5fa" stroke-width="1.8" d="M63.5 1.5c-15.6 0-26 6.8-26 20.3v15h26v4.5H23.8C10.5 41.3 0 51.5 0 66.8c0 15.6 11.2 26 26.5 26h9v-13c0-14.8 12.5-26 27-26h26V36c0-14.2-11.8-25.5-25-34.5zm-14 8a4.5 4.5 0 110 9 4.5 4.5 0 010-9z"/>
+        <path fill="#ffe052" stroke="#fef08a" stroke-width="1.8" d="M64.5 126.5c15.6 0 26-6.8 26-20.3v-15h-26v-4.5h39.7c13.3 0 23.8-10.2 23.8-25.5 0-15.6-11.2-26-26.5-26h-9v13c0 14.8-12.5 26-27 26h-26V92c0 14.2 11.8 25.5 25 34.5zm14-8a4.5 4.5 0 110-9 4.5 4.5 0 010 9z"/>
       </g>
     </g>
 
-    <!-- 3. TYPESCRIPT -->
+    <!-- 4. TYPESCRIPT (3D Beveled Cobalt Glass Tile) -->
     <g id="symTS">
-      <rect x="-30" y="-30" width="60" height="60" rx="10" fill="#3178c6" stroke="#93c5fd" stroke-width="2.2"/>
-      <rect x="-26" y="-26" width="52" height="52" rx="7" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/>
+      <rect x="-30" y="-30" width="60" height="60" rx="10" fill="#2563eb" stroke="#93c5fd" stroke-width="2.5"/>
+      <rect x="-26" y="-26" width="52" height="52" rx="7" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.2"/>
       <text x="-13" y="15" font-family="'Arial Black', Impact, sans-serif" font-size="28" font-weight="900" fill="#ffffff" text-anchor="middle">T</text>
       <text x="14" y="15" font-family="'Arial Black', Impact, sans-serif" font-size="28" font-weight="900" fill="#ffffff" text-anchor="middle">S</text>
     </g>
 
-    <!-- 4. JAVASCRIPT -->
+    <!-- 5. JAVASCRIPT (24K Gold Ingot) -->
     <g id="symJS">
-      <rect x="-30" y="-30" width="60" height="60" rx="10" fill="#f7df1e" stroke="#fef08a" stroke-width="2.2"/>
+      <rect x="-30" y="-30" width="60" height="60" rx="10" fill="#eab308" stroke="#fef08a" stroke-width="2.5"/>
       <rect x="-26" y="-26" width="52" height="52" rx="7" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.2"/>
       <text x="-13" y="15" font-family="'Arial Black', Impact, sans-serif" font-size="28" font-weight="900" fill="#000000" text-anchor="middle">J</text>
       <text x="14" y="15" font-family="'Arial Black', Impact, sans-serif" font-size="28" font-weight="900" fill="#000000" text-anchor="middle">S</text>
     </g>
 
-    <!-- 5. NODE.JS -->
-    <g id="symNode">
-      <polygon points="0,-32 28,-16 28,16 0,32 -28,16 -28,-16" fill="#339933" stroke="#86efac" stroke-width="2.5" stroke-linejoin="round"/>
-      <polygon points="0,-26 23,-13 23,13 0,26 -23,13 -23,-13" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/>
-      <text x="0" y="8" font-family="'Arial Black', Impact, sans-serif" font-size="22" font-weight="900" fill="#ffffff" text-anchor="middle">JS</text>
-      <circle cx="0" cy="-14" r="3.5" fill="#86efac"/>
-    </g>
-
-    <!-- 6. GIT -->
+    <!-- 6. GIT (Ruby-Orange Diamond) -->
     <g id="symGit">
       <g transform="rotate(45)">
-        <rect x="-22" y="-22" width="44" height="44" rx="8" fill="#f05032" stroke="#fed7aa" stroke-width="2"/>
+        <rect x="-22" y="-22" width="44" height="44" rx="8" fill="#ea580c" stroke="#fed7aa" stroke-width="2.2"/>
         <g stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" fill="none">
           <line x1="-8" y1="-8" x2="-8" y2="10"/>
           <path d="M-8 0 Q 6 -2 8 8"/>
@@ -123,10 +135,10 @@
       </g>
     </g>
 
-    <!-- 7. DOCKER -->
+    <!-- 7. DOCKER (Cyan Container Whale) -->
     <g id="symDocker">
-      <rect x="-30" y="-30" width="60" height="60" rx="10" fill="#0db7ed" stroke="#7dd3fc" stroke-width="2.2"/>
-      <g fill="#ffffff" stroke="#0db7ed" stroke-width="1">
+      <rect x="-30" y="-30" width="60" height="60" rx="10" fill="#0284c7" stroke="#7dd3fc" stroke-width="2.2"/>
+      <g fill="#ffffff" stroke="#0284c7" stroke-width="1">
         <rect x="-18" y="-12" width="6" height="5" rx="1"/>
         <rect x="-10" y="-12" width="6" height="5" rx="1"/>
         <rect x="-2" y="-12" width="6" height="5" rx="1"/>
@@ -135,15 +147,7 @@
         <rect x="6" y="-12" width="6" height="5" rx="1"/>
       </g>
       <path d="M -24 -2 C -24 14 -12 20 6 20 C 18 20 25 14 26 6 C 24 6 22 8 18 8 C 16 8 14 6 14 4 C 22 2 24 -2 24 -6 C 21 -4 16 -4 12 -4 C -2 -4 -16 -4 -24 -2 Z" fill="#ffffff"/>
-      <circle cx="-16" cy="6" r="1.5" fill="#0db7ed"/>
-    </g>
-
-    <!-- 8. FLUTTER -->
-    <g id="symFlutter">
-      <rect x="-30" y="-30" width="60" height="60" rx="10" fill="#02569b" stroke="#38bdf8" stroke-width="2.2"/>
-      <polygon points="12,-20 -10,2 -2,10 20,-12" fill="#54c5f8"/>
-      <polygon points="12,18 2,8 10,0 20,10" fill="#29b6f6"/>
-      <polygon points="-2,10 6,18 12,12 4,4" fill="#01579b"/>
+      <circle cx="-16" cy="6" r="1.5" fill="#0284c7"/>
     </g>
 
     <!-- Falling Items: Gold Coin, Code Tag, Bracket -->
@@ -163,6 +167,7 @@
       <text x="0" y="1" font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#fde047" text-anchor="middle" dominant-baseline="central">{ }</text>
     </g>
 
+    <!-- Window Clip: x=42, y=74, w=816, h=262 -->
     <clipPath id="reelWindowClip">
       <rect x="42" y="74" width="816" height="262" rx="12"/>
     </clipPath>
@@ -183,7 +188,7 @@
 
   <!-- ── 1. Outer Luxury Cabinet ── -->
   <rect x="12" y="12" width="876" height="386" rx="20" fill="url(#cabGrad)"/>
-  <!-- Beveled Gold Outer Rim -->
+  <!-- 24K Gold Beveled Outer Rim -->
   <rect x="12" y="12" width="876" height="386" rx="20" fill="none" stroke="url(#goldBevel)" stroke-width="4.5"/>
   <!-- Inner Violet Bezel -->
   <rect x="18" y="18" width="864" height="374" rx="16" fill="none" stroke="#3b1d42" stroke-width="2"/>
@@ -565,45 +570,18 @@
     </circle>
   </g>
 
-  <!-- ── 3. Dynamic Rotating Marquee Top Banner (Centered at y=46) ── -->
-  
-    <g transform="translate(450, 46)" class="marquee-badge">
-      <rect x="-185" y="-17" width="370" height="34" rx="8" fill="#120619" stroke="url(#goldBevel)" stroke-width="2.5"/>
-      <rect x="-181" y="-13" width="362" height="26" rx="6" fill="none" stroke="rgba(253, 224, 71, 0.45)" stroke-width="1"/>
-
-      <!-- Title 1 (0s..8s) -->
-      <text x="0" y="2" font-family="'Arial Black', Impact, sans-serif" font-size="15" font-weight="900"
-            text-anchor="middle" dominant-baseline="central" letter-spacing="3" fill="#38bdf8">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.24; 0.25; 0.99; 1" values="1; 1; 0; 0; 1"/>
-        ★  F U L L - S T A C K   C O M B O  ★
-      </text>
-
-      <!-- Title 2 (8s..16s) -->
-      <text x="0" y="2" font-family="'Arial Black', Impact, sans-serif" font-size="15" font-weight="900"
-            text-anchor="middle" dominant-baseline="central" letter-spacing="3" fill="#fde047" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.25; 0.49; 0.50; 1" values="0; 1; 1; 0; 0"/>
-        ★  P Y T H O N   J A C K P O T  ★
-      </text>
-
-      <!-- Title 3 (16s..24s) -->
-      <text x="0" y="2" font-family="'Arial Black', Impact, sans-serif" font-size="15" font-weight="900"
-            text-anchor="middle" dominant-baseline="central" letter-spacing="3" fill="#60a5fa" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.50; 0.74; 0.75; 1" values="0; 1; 1; 0; 0"/>
-        ★  T Y P E - S A F E   C O M B O  ★
-      </text>
-
-      <!-- Title 4 (24s..32s) -->
-      <text x="0" y="2" font-family="'Arial Black', Impact, sans-serif" font-size="15" font-weight="900"
-            text-anchor="middle" dominant-baseline="central" letter-spacing="3" fill="#61dafb" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.75; 0.99; 1" values="0; 1; 1; 0"/>
-        ★  7 7 7   R E A C T   J A C K P O T  ★
-      </text>
-    </g>
-    
+  <!-- ── 3. Marquee Top Banner: CRISP, SINGLE, ZERO OVERLAP ── -->
+  <g class="marquee-badge" transform="translate(450, 46)">
+    <!-- Heavy Gold Beveled Plaque -->
+    <rect x="-195" y="-17" width="390" height="34" rx="8" fill="#120619" stroke="url(#goldBevel)" stroke-width="2.5"/>
+    <rect x="-191" y="-13" width="382" height="26" rx="6" fill="none" stroke="rgba(253, 224, 71, 0.45)" stroke-width="1"/>
+    <!-- Single High-Contrast Neon Gold & Cyan Title -->
+    <text x="0" y="2" font-family="'Arial Black', Impact, sans-serif" font-size="15" font-weight="900"
+          text-anchor="middle" dominant-baseline="central" letter-spacing="3" fill="#fde047">
+      <animate attributeName="fill" values="#fde047;#38bdf8;#61dafb;#fde047" dur="2s" repeatCount="indefinite"/>
+      ★  F U L L - S T A C K   J A C K P O T  ★
+    </text>
+  </g>
 
   <!-- ── 4. Reel Housing Window (y=74 to y=336, height=262) ── -->
   <rect x="42" y="74" width="816" height="262" rx="12" fill="url(#innerWindowBg)" stroke="#4a1d4a" stroke-width="3"/>
@@ -619,114 +597,84 @@
     <g>
       
         <animateTransform attributeName="transform" type="translate"
-          dur="32s" repeatCount="indefinite"
-          keyTimes="0; 0.05; 0.07; 0.08; 0.23; 0.25; 0.30; 0.32; 0.33; 0.48; 0.50; 0.55; 0.57; 0.58; 0.73; 0.75; 0.80; 0.82; 0.83; 0.98; 1"
-          values="0,-78; 0,-702; 0,-62; 0,-78; 0,-78; 0,-78; 0,-1326; 0,-686; 0,-702; 0,-702; 0,-702; 0,-780; 0,-140; 0,-156; 0,-156; 0,-156; 0,-624; 0,16; 0,0; 0,0; 0,-78"
+          dur="8s" repeatCount="indefinite"
+          keyTimes="0; 0.06; 0.12; 0.18; 0.24; 0.27; 0.30; 0.95; 1"
+          values="0,0; 0,-468; 0,-936; 0,-448; 0,18; 0,-8; 0,0; 0,0; 0,0"
           calcMode="spline"
-          keySplines="0.2 0 0.8 1; 0.3 0 0.7 1; 0.3 0 0.7 1; 0 0 1 1; 0.5 0 0.5 1; 0.2 0 0.8 1; 0.3 0 0.7 1; 0.3 0 0.7 1; 0 0 1 1; 0.5 0 0.5 1; 0.2 0 0.8 1; 0.3 0 0.7 1; 0.3 0 0.7 1; 0 0 1 1; 0.5 0 0.5 1; 0.2 0 0.8 1; 0.3 0 0.7 1; 0.3 0 0.7 1; 0 0 1 1; 0.5 0 0.5 1"/>
+          keySplines="0.2 0 0.8 1; 0.2 0 0.8 1; 0.2 0 0.8 1; 0.1 0.8 0.3 1; 0.3 0 0.7 1; 0.3 0 0.7 1; 0 0 1 1; 0.5 0 0.5 1"/>
     
-      <g transform="translate(179, 0)">
-<use href="#symReact" x="0" y="-419"/>
-<use href="#symPython" x="0" y="-341"/>
-<use href="#symTS" x="0" y="-263"/>
-<use href="#symJS" x="0" y="-185"/>
-<use href="#symNode" x="0" y="-107"/>
-<use href="#symGit" x="0" y="-29"/>
-<use href="#symDocker" x="0" y="49"/>
-<use href="#symFlutter" x="0" y="127"/>
-<use href="#symReact" x="0" y="205"/>
-<use href="#symPython" x="0" y="283"/>
-<use href="#symTS" x="0" y="361"/>
-<use href="#symJS" x="0" y="439"/>
-<use href="#symNode" x="0" y="517"/>
-<use href="#symGit" x="0" y="595"/>
-<use href="#symDocker" x="0" y="673"/>
-<use href="#symFlutter" x="0" y="751"/>
-<use href="#symReact" x="0" y="829"/>
-<use href="#symPython" x="0" y="907"/>
-<use href="#symTS" x="0" y="985"/>
-<use href="#symJS" x="0" y="1063"/>
-<use href="#symNode" x="0" y="1141"/>
-<use href="#symGit" x="0" y="1219"/>
-<use href="#symDocker" x="0" y="1297"/>
-<use href="#symFlutter" x="0" y="1375"/>
-</g>
+      
+        <g transform="translate(179, 0)">
+          <use href="#symPython" x="0" y="-185"/>
+          <use href="#symDocker" x="0" y="-107"/>
+          <use href="#symNode" x="0" y="-29"/>
+          <use href="#symJS" x="0" y="49"/>
+          <use href="#symTS" x="0" y="127"/>
+          <use href="#symReact" x="0" y="205"/>
+          <use href="#symGit" x="0" y="283"/>
+          <use href="#symPython" x="0" y="361"/>
+          <use href="#symDocker" x="0" y="439"/>
+          <use href="#symNode" x="0" y="517"/>
+          <use href="#symJS" x="0" y="595"/>
+          <use href="#symReact" x="0" y="673"/>
+        </g>
+    
     </g>
 
     <!-- Reel 2 Animated Strip -->
     <g>
       
         <animateTransform attributeName="transform" type="translate"
-          dur="32s" repeatCount="indefinite"
-          keyTimes="0; 0.07; 0.10; 0.11; 0.23; 0.25; 0.32; 0.35; 0.36; 0.48; 0.50; 0.57; 0.60; 0.61; 0.73; 0.75; 0.82; 0.85; 0.86; 0.98; 1"
-          values="0,-312; 0,-936; 0,-296; 0,-312; 0,-312; 0,-312; 0,-1326; 0,-686; 0,-702; 0,-702; 0,-702; 0,-780; 0,-140; 0,-156; 0,-156; 0,-156; 0,-624; 0,16; 0,0; 0,0; 0,-312"
+          dur="8s" repeatCount="indefinite"
+          keyTimes="0; 0.08; 0.16; 0.24; 0.32; 0.37; 0.41; 0.44; 0.95; 1"
+          values="0,0; 0,-468; 0,-936; 0,-1404; 0,-446; 0,22; 0,-10; 0,0; 0,0; 0,0"
           calcMode="spline"
-          keySplines="0.2 0 0.8 1; 0.3 0 0.7 1; 0.3 0 0.7 1; 0 0 1 1; 0.5 0 0.5 1; 0.2 0 0.8 1; 0.3 0 0.7 1; 0.3 0 0.7 1; 0 0 1 1; 0.5 0 0.5 1; 0.2 0 0.8 1; 0.3 0 0.7 1; 0.3 0 0.7 1; 0 0 1 1; 0.5 0 0.5 1; 0.2 0 0.8 1; 0.3 0 0.7 1; 0.3 0 0.7 1; 0 0 1 1; 0.5 0 0.5 1"/>
+          keySplines="0.2 0 0.8 1; 0.2 0 0.8 1; 0.2 0 0.8 1; 0.2 0 0.8 1; 0.1 0.8 0.3 1; 0.3 0 0.7 1; 0.3 0 0.7 1; 0 0 1 1; 0.5 0 0.5 1"/>
     
-      <g transform="translate(450, 0)">
-<use href="#symReact" x="0" y="-419"/>
-<use href="#symPython" x="0" y="-341"/>
-<use href="#symTS" x="0" y="-263"/>
-<use href="#symJS" x="0" y="-185"/>
-<use href="#symNode" x="0" y="-107"/>
-<use href="#symGit" x="0" y="-29"/>
-<use href="#symDocker" x="0" y="49"/>
-<use href="#symFlutter" x="0" y="127"/>
-<use href="#symReact" x="0" y="205"/>
-<use href="#symPython" x="0" y="283"/>
-<use href="#symTS" x="0" y="361"/>
-<use href="#symJS" x="0" y="439"/>
-<use href="#symNode" x="0" y="517"/>
-<use href="#symGit" x="0" y="595"/>
-<use href="#symDocker" x="0" y="673"/>
-<use href="#symFlutter" x="0" y="751"/>
-<use href="#symReact" x="0" y="829"/>
-<use href="#symPython" x="0" y="907"/>
-<use href="#symTS" x="0" y="985"/>
-<use href="#symJS" x="0" y="1063"/>
-<use href="#symNode" x="0" y="1141"/>
-<use href="#symGit" x="0" y="1219"/>
-<use href="#symDocker" x="0" y="1297"/>
-<use href="#symFlutter" x="0" y="1375"/>
-</g>
+      
+        <g transform="translate(450, 0)">
+          <use href="#symReact" x="0" y="-185"/>
+          <use href="#symPython" x="0" y="-107"/>
+          <use href="#symGit" x="0" y="-29"/>
+          <use href="#symTS" x="0" y="49"/>
+          <use href="#symJS" x="0" y="127"/>
+          <use href="#symNode" x="0" y="205"/>
+          <use href="#symDocker" x="0" y="283"/>
+          <use href="#symReact" x="0" y="361"/>
+          <use href="#symPython" x="0" y="439"/>
+          <use href="#symGit" x="0" y="517"/>
+          <use href="#symTS" x="0" y="595"/>
+          <use href="#symNode" x="0" y="673"/>
+        </g>
+    
     </g>
 
     <!-- Reel 3 Animated Strip -->
     <g>
       
         <animateTransform attributeName="transform" type="translate"
-          dur="32s" repeatCount="indefinite"
-          keyTimes="0; 0.10; 0.13; 0.14; 0.23; 0.25; 0.35; 0.38; 0.39; 0.48; 0.50; 0.60; 0.63; 0.64; 0.73; 0.75; 0.85; 0.88; 0.89; 0.98; 1"
-          values="0,0; 0,-624; 0,16; 0,0; 0,0; 0,0; 0,-1326; 0,-686; 0,-702; 0,-702; 0,-702; 0,-624; 0,16; 0,0; 0,0; 0,0; 0,-624; 0,16; 0,0; 0,0; 0,0"
+          dur="8s" repeatCount="indefinite"
+          keyTimes="0; 0.08; 0.16; 0.24; 0.32; 0.40; 0.48; 0.52; 0.55; 0.95; 1"
+          values="0,0; 0,-468; 0,-936; 0,-1404; 0,-1872; 0,-442; 0,26; 0,-12; 0,0; 0,0"
           calcMode="spline"
-          keySplines="0.2 0 0.8 1; 0.3 0 0.7 1; 0.3 0 0.7 1; 0 0 1 1; 0.5 0 0.5 1; 0.2 0 0.8 1; 0.3 0 0.7 1; 0.3 0 0.7 1; 0 0 1 1; 0.5 0 0.5 1; 0.2 0 0.8 1; 0.3 0 0.7 1; 0.3 0 0.7 1; 0 0 1 1; 0.5 0 0.5 1; 0.2 0 0.8 1; 0.3 0 0.7 1; 0.3 0 0.7 1; 0 0 1 1; 0.5 0 0.5 1"/>
+          keySplines="0.2 0 0.8 1; 0.2 0 0.8 1; 0.2 0 0.8 1; 0.2 0 0.8 1; 0.2 0 0.8 1; 0.1 0.8 0.3 1; 0.3 0 0.7 1; 0.3 0 0.7 1; 0 0 1 1; 0.5 0 0.5 1"/>
     
-      <g transform="translate(721, 0)">
-<use href="#symReact" x="0" y="-419"/>
-<use href="#symPython" x="0" y="-341"/>
-<use href="#symTS" x="0" y="-263"/>
-<use href="#symJS" x="0" y="-185"/>
-<use href="#symNode" x="0" y="-107"/>
-<use href="#symGit" x="0" y="-29"/>
-<use href="#symDocker" x="0" y="49"/>
-<use href="#symFlutter" x="0" y="127"/>
-<use href="#symReact" x="0" y="205"/>
-<use href="#symPython" x="0" y="283"/>
-<use href="#symTS" x="0" y="361"/>
-<use href="#symJS" x="0" y="439"/>
-<use href="#symNode" x="0" y="517"/>
-<use href="#symGit" x="0" y="595"/>
-<use href="#symDocker" x="0" y="673"/>
-<use href="#symFlutter" x="0" y="751"/>
-<use href="#symReact" x="0" y="829"/>
-<use href="#symPython" x="0" y="907"/>
-<use href="#symTS" x="0" y="985"/>
-<use href="#symJS" x="0" y="1063"/>
-<use href="#symNode" x="0" y="1141"/>
-<use href="#symGit" x="0" y="1219"/>
-<use href="#symDocker" x="0" y="1297"/>
-<use href="#symFlutter" x="0" y="1375"/>
-</g>
+      
+        <g transform="translate(721, 0)">
+          <use href="#symGit" x="0" y="-185"/>
+          <use href="#symReact" x="0" y="-107"/>
+          <use href="#symNode" x="0" y="-29"/>
+          <use href="#symJS" x="0" y="49"/>
+          <use href="#symDocker" x="0" y="127"/>
+          <use href="#symPython" x="0" y="205"/>
+          <use href="#symTS" x="0" y="283"/>
+          <use href="#symGit" x="0" y="361"/>
+          <use href="#symReact" x="0" y="439"/>
+          <use href="#symNode" x="0" y="517"/>
+          <use href="#symJS" x="0" y="595"/>
+          <use href="#symPython" x="0" y="673"/>
+        </g>
+    
     </g>
 
     <!-- Chrome Vertical Column Dividers -->
@@ -747,15 +695,15 @@
   <!-- ── 5. Horizontal Center Win Line / Laser Beam (Exact midpoint y=205) ── -->
   <g>
     <line x1="38" y1="205" x2="862" y2="205" stroke="#38bdf8" stroke-width="1.8" opacity="0.6"/>
-    <!-- Animated Golden/Cyan Laser Beam on Landings -->
+    <!-- Animated Golden/Cyan Laser Beam on Landings (bursts at 4.4s..8.0s) -->
     <line x1="42" y1="205" x2="858" y2="205" stroke="#61dafb" stroke-width="3.5" filter="url(#laserGlow)" opacity="0">
-      <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-               keyTimes="0; 0.13; 0.14; 0.23; 0.24; 0.38; 0.39; 0.48; 0.49; 0.63; 0.64; 0.73; 0.74; 0.88; 0.89; 0.98; 1"
-               values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0; 1; 1; 0; 0; 1; 1; 0"/>
-      <animate attributeName="stroke" dur="1.2s" repeatCount="indefinite"
+      <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+               keyTimes="0; 0.54; 0.56; 0.94; 0.96; 1"
+               values="0; 0; 1; 1; 0; 0"/>
+      <animate attributeName="stroke" dur="1s" repeatCount="indefinite"
                values="#61dafb;#fde047;#61dafb"/>
       <animate attributeName="stroke-width" dur="0.8s" repeatCount="indefinite"
-               values="3;5;3"/>
+               values="3;5.5;3"/>
     </line>
 
     <!-- Left Payline Arrow -->
@@ -764,17 +712,17 @@
     <polygon points="860,205 870,199 870,211" fill="#38bdf8" stroke="#0369a1" stroke-width="1.2"/>
   </g>
 
-  <!-- ── 6. Falling Developer Rain & Sparkles on Jackpots ── -->
+  <!-- ── 6. Falling Developer Rain & Sparkles on Jackpot ── -->
   <g pointer-events="none">
     
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.388; 0.389; 0.444; 0.447; 0.887; 0.889; 0.944; 0.947; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.388; 0.444; 0.447; 0.887; 0.944; 1"
-                 values="180,-30; 180,-30; 90,440; 180,-30; 180,-30; 90,440; 180,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.550; 0.556; 0.775; 0.788; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.550; 0.775; 1"
+                 values="180,-30; 180,-30; 90,440; 90,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 360"/>
@@ -782,13 +730,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.393; 0.394; 0.449; 0.452; 0.892; 0.894; 0.949; 0.952; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.393; 0.449; 0.452; 0.892; 0.949; 1"
-                 values="240,-30; 240,-30; 195,440; 240,-30; 240,-30; 195,440; 240,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.573; 0.579; 0.797; 0.810; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.573; 0.797; 1"
+                 values="240,-30; 240,-30; 195,440; 195,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 720"/>
@@ -796,13 +744,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.398; 0.399; 0.454; 0.457; 0.897; 0.899; 0.954; 0.957; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.398; 0.454; 0.457; 0.897; 0.954; 1"
-                 values="310,-30; 310,-30; 310,440; 310,-30; 310,-30; 310,440; 310,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.595; 0.601; 0.820; 0.833; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.595; 0.820; 1"
+                 values="310,-30; 310,-30; 310,440; 310,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 1080"/>
@@ -810,13 +758,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.403; 0.404; 0.459; 0.462; 0.902; 0.904; 0.959; 0.962; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.403; 0.459; 0.462; 0.902; 0.959; 1"
-                 values="370,-30; 370,-30; 415,440; 370,-30; 370,-30; 415,440; 370,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.618; 0.624; 0.843; 0.855; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.618; 0.843; 1"
+                 values="370,-30; 370,-30; 415,440; 415,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 360"/>
@@ -824,13 +772,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.408; 0.409; 0.464; 0.467; 0.907; 0.909; 0.964; 0.967; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.408; 0.464; 0.467; 0.907; 0.964; 1"
-                 values="430,-30; 430,-30; 520,440; 430,-30; 430,-30; 520,440; 430,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.640; 0.646; 0.865; 0.877; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.640; 0.865; 1"
+                 values="430,-30; 430,-30; 520,440; 520,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 720"/>
@@ -838,13 +786,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.413; 0.414; 0.469; 0.472; 0.912; 0.914; 0.969; 0.972; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.413; 0.469; 0.472; 0.912; 0.969; 1"
-                 values="480,-30; 480,-30; 390,440; 480,-30; 480,-30; 390,440; 480,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.663; 0.669; 0.888; 0.900; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.663; 0.888; 1"
+                 values="480,-30; 480,-30; 390,440; 390,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 1080"/>
@@ -852,13 +800,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.388; 0.389; 0.444; 0.447; 0.887; 0.889; 0.944; 0.947; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.388; 0.444; 0.447; 0.887; 0.944; 1"
-                 values="540,-30; 540,-30; 495,440; 540,-30; 540,-30; 495,440; 540,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.685; 0.691; 0.910; 0.923; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.685; 0.910; 1"
+                 values="540,-30; 540,-30; 495,440; 495,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 360"/>
@@ -866,13 +814,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.393; 0.394; 0.449; 0.452; 0.892; 0.894; 0.949; 0.952; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.393; 0.449; 0.452; 0.892; 0.949; 1"
-                 values="600,-30; 600,-30; 600,440; 600,-30; 600,-30; 600,440; 600,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.708; 0.714; 0.932; 0.945; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.708; 0.932; 1"
+                 values="600,-30; 600,-30; 600,440; 600,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 720"/>
@@ -880,13 +828,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.398; 0.399; 0.454; 0.457; 0.897; 0.899; 0.954; 0.957; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.398; 0.454; 0.457; 0.897; 0.954; 1"
-                 values="670,-30; 670,-30; 715,440; 670,-30; 670,-30; 715,440; 670,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.550; 0.556; 0.775; 0.788; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.550; 0.775; 1"
+                 values="670,-30; 670,-30; 715,440; 715,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 1080"/>
@@ -894,13 +842,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.403; 0.404; 0.459; 0.462; 0.902; 0.904; 0.959; 0.962; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.403; 0.459; 0.462; 0.902; 0.959; 1"
-                 values="720,-30; 720,-30; 810,440; 720,-30; 720,-30; 810,440; 720,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.573; 0.579; 0.797; 0.810; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.573; 0.797; 1"
+                 values="720,-30; 720,-30; 810,440; 810,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 360"/>
@@ -908,13 +856,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.408; 0.409; 0.464; 0.467; 0.907; 0.909; 0.964; 0.967; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.408; 0.464; 0.467; 0.907; 0.964; 1"
-                 values="260,-30; 260,-30; 170,440; 260,-30; 260,-30; 170,440; 260,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.595; 0.601; 0.820; 0.833; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.595; 0.820; 1"
+                 values="260,-30; 260,-30; 170,440; 170,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 720"/>
@@ -922,13 +870,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.413; 0.414; 0.469; 0.472; 0.912; 0.914; 0.969; 0.972; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.413; 0.469; 0.472; 0.912; 0.969; 1"
-                 values="340,-30; 340,-30; 295,440; 340,-30; 340,-30; 295,440; 340,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.618; 0.624; 0.843; 0.855; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.618; 0.843; 1"
+                 values="340,-30; 340,-30; 295,440; 295,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 1080"/>
@@ -936,13 +884,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.388; 0.389; 0.444; 0.447; 0.887; 0.889; 0.944; 0.947; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.388; 0.444; 0.447; 0.887; 0.944; 1"
-                 values="400,-30; 400,-30; 400,440; 400,-30; 400,-30; 400,440; 400,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.640; 0.646; 0.865; 0.877; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.640; 0.865; 1"
+                 values="400,-30; 400,-30; 400,440; 400,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 360"/>
@@ -950,13 +898,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.393; 0.394; 0.449; 0.452; 0.892; 0.894; 0.949; 0.952; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.393; 0.449; 0.452; 0.892; 0.949; 1"
-                 values="460,-30; 460,-30; 505,440; 460,-30; 460,-30; 505,440; 460,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.663; 0.669; 0.888; 0.900; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.663; 0.888; 1"
+                 values="460,-30; 460,-30; 505,440; 505,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 720"/>
@@ -964,13 +912,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.398; 0.399; 0.454; 0.457; 0.897; 0.899; 0.954; 0.957; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.398; 0.454; 0.457; 0.897; 0.954; 1"
-                 values="520,-30; 520,-30; 610,440; 520,-30; 520,-30; 610,440; 520,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.685; 0.691; 0.910; 0.923; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.685; 0.910; 1"
+                 values="520,-30; 520,-30; 610,440; 610,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 1080"/>
@@ -978,13 +926,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.403; 0.404; 0.459; 0.462; 0.902; 0.904; 0.959; 0.962; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.403; 0.459; 0.462; 0.902; 0.959; 1"
-                 values="580,-30; 580,-30; 490,440; 580,-30; 580,-30; 490,440; 580,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.708; 0.714; 0.932; 0.945; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.708; 0.932; 1"
+                 values="580,-30; 580,-30; 490,440; 490,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 360"/>
@@ -992,13 +940,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.408; 0.409; 0.464; 0.467; 0.907; 0.909; 0.964; 0.967; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.408; 0.464; 0.467; 0.907; 0.964; 1"
-                 values="640,-30; 640,-30; 595,440; 640,-30; 640,-30; 595,440; 640,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.550; 0.556; 0.775; 0.788; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.550; 0.775; 1"
+                 values="640,-30; 640,-30; 595,440; 595,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 720"/>
@@ -1006,13 +954,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.413; 0.414; 0.469; 0.472; 0.912; 0.914; 0.969; 0.972; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.413; 0.469; 0.472; 0.912; 0.969; 1"
-                 values="700,-30; 700,-30; 700,440; 700,-30; 700,-30; 700,440; 700,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.573; 0.579; 0.797; 0.810; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.573; 0.797; 1"
+                 values="700,-30; 700,-30; 700,440; 700,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 1080"/>
@@ -1020,13 +968,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.388; 0.389; 0.444; 0.447; 0.887; 0.889; 0.944; 0.947; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.388; 0.444; 0.447; 0.887; 0.944; 1"
-                 values="320,-30; 320,-30; 365,440; 320,-30; 320,-30; 365,440; 320,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.595; 0.601; 0.820; 0.833; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.595; 0.820; 1"
+                 values="320,-30; 320,-30; 365,440; 365,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 360"/>
@@ -1034,13 +982,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.393; 0.394; 0.449; 0.452; 0.892; 0.894; 0.949; 0.952; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.393; 0.449; 0.452; 0.892; 0.949; 1"
-                 values="380,-30; 380,-30; 470,440; 380,-30; 380,-30; 470,440; 380,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.618; 0.624; 0.843; 0.855; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.618; 0.843; 1"
+                 values="380,-30; 380,-30; 470,440; 470,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 720"/>
@@ -1048,13 +996,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.398; 0.399; 0.454; 0.457; 0.897; 0.899; 0.954; 0.957; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.398; 0.454; 0.457; 0.897; 0.954; 1"
-                 values="450,-30; 450,-30; 360,440; 450,-30; 450,-30; 360,440; 450,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.640; 0.646; 0.865; 0.877; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.640; 0.865; 1"
+                 values="450,-30; 450,-30; 360,440; 360,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 1080"/>
@@ -1062,13 +1010,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.403; 0.404; 0.459; 0.462; 0.902; 0.904; 0.959; 0.962; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.403; 0.459; 0.462; 0.902; 0.959; 1"
-                 values="510,-30; 510,-30; 465,440; 510,-30; 510,-30; 465,440; 510,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.663; 0.669; 0.888; 0.900; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.663; 0.888; 1"
+                 values="510,-30; 510,-30; 465,440; 465,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 360"/>
@@ -1076,13 +1024,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.408; 0.409; 0.464; 0.467; 0.907; 0.909; 0.964; 0.967; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.408; 0.464; 0.467; 0.907; 0.964; 1"
-                 values="570,-30; 570,-30; 570,440; 570,-30; 570,-30; 570,440; 570,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.685; 0.691; 0.910; 0.923; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.685; 0.910; 1"
+                 values="570,-30; 570,-30; 570,440; 570,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 720"/>
@@ -1090,13 +1038,13 @@
         </g>
       </g>
       <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.413; 0.414; 0.469; 0.472; 0.912; 0.914; 0.969; 0.972; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="translate" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.413; 0.469; 0.472; 0.912; 0.969; 1"
-                 values="630,-30; 630,-30; 675,440; 630,-30; 630,-30; 675,440; 630,-30"
-                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1; 0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.708; 0.714; 0.932; 0.945; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.708; 0.932; 1"
+                 values="630,-30; 630,-30; 675,440; 675,440"
+                 calcMode="spline" keySplines="0 0 1 1; 0.45 0 0.9 1; 0 0 1 1"/>
         <g>
           <animateTransform attributeName="transform" type="rotate" dur="1.4s" repeatCount="indefinite"
                             values="0; 1080"/>
@@ -1105,247 +1053,194 @@
       </g>
     
       <g transform="translate(180, 130)" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.388; 0.391; 0.402; 0.405; 0.887; 0.891; 0.902; 0.905; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="scale" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.388; 0.395; 0.405; 0.887; 0.895; 0.905; 1"
-                 values="0; 0; 1.5; 0; 0; 1.5; 0" additive="sum"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.550; 0.569; 0.613; 0.625; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="scale" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.550; 0.581; 0.625; 1"
+                 values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
               fill="#38bdf8" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(220, 260)" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.391; 0.394; 0.405; 0.408; 0.891; 0.894; 0.905; 0.908; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="scale" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.391; 0.398; 0.408; 0.891; 0.898; 0.908; 1"
-                 values="0; 0; 1.5; 0; 0; 1.5; 0" additive="sum"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.565; 0.584; 0.628; 0.640; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="scale" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.565; 0.596; 0.640; 1"
+                 values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
               fill="#fde047" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(310, 160)" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.394; 0.397; 0.408; 0.411; 0.894; 0.897; 0.908; 0.911; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="scale" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.394; 0.402; 0.411; 0.894; 0.902; 0.911; 1"
-                 values="0; 0; 1.5; 0; 0; 1.5; 0" additive="sum"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.580; 0.599; 0.643; 0.655; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="scale" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.580; 0.611; 0.655; 1"
+                 values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
               fill="#ffffff" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(450, 120)" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.397; 0.401; 0.411; 0.414; 0.897; 0.901; 0.911; 0.914; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="scale" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.397; 0.405; 0.414; 0.897; 0.905; 0.914; 1"
-                 values="0; 0; 1.5; 0; 0; 1.5; 0" additive="sum"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.595; 0.614; 0.658; 0.670; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="scale" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.595; 0.626; 0.670; 1"
+                 values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
               fill="#38bdf8" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(480, 280)" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.400; 0.404; 0.414; 0.417; 0.900; 0.904; 0.914; 0.917; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="scale" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.400; 0.408; 0.417; 0.900; 0.908; 0.917; 1"
-                 values="0; 0; 1.5; 0; 0; 1.5; 0" additive="sum"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.610; 0.629; 0.673; 0.685; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="scale" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.610; 0.641; 0.685; 1"
+                 values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
               fill="#fde047" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(590, 140)" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.403; 0.407; 0.417; 0.420; 0.903; 0.907; 0.917; 0.920; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="scale" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.403; 0.411; 0.420; 0.903; 0.911; 0.920; 1"
-                 values="0; 0; 1.5; 0; 0; 1.5; 0" additive="sum"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.625; 0.644; 0.688; 0.700; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="scale" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.625; 0.656; 0.700; 1"
+                 values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
               fill="#ffffff" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(620, 260)" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.406; 0.410; 0.420; 0.423; 0.906; 0.910; 0.920; 0.923; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="scale" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.406; 0.414; 0.423; 0.906; 0.914; 0.923; 1"
-                 values="0; 0; 1.5; 0; 0; 1.5; 0" additive="sum"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.640; 0.659; 0.703; 0.715; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="scale" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.640; 0.671; 0.715; 1"
+                 values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
               fill="#38bdf8" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(720, 170)" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.409; 0.413; 0.423; 0.427; 0.909; 0.913; 0.923; 0.927; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="scale" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.409; 0.417; 0.427; 0.909; 0.917; 0.927; 1"
-                 values="0; 0; 1.5; 0; 0; 1.5; 0" additive="sum"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.655; 0.674; 0.718; 0.730; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="scale" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.655; 0.686; 0.730; 1"
+                 values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
               fill="#fde047" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(150, 205)" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.413; 0.416; 0.427; 0.430; 0.912; 0.916; 0.927; 0.930; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="scale" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.413; 0.420; 0.430; 0.912; 0.920; 0.930; 1"
-                 values="0; 0; 1.5; 0; 0; 1.5; 0" additive="sum"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.670; 0.689; 0.733; 0.745; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="scale" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.670; 0.701; 0.745; 1"
+                 values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
               fill="#ffffff" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(280, 205)" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.416; 0.419; 0.430; 0.433; 0.916; 0.919; 0.930; 0.933; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="scale" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.416; 0.423; 0.433; 0.916; 0.923; 0.933; 1"
-                 values="0; 0; 1.5; 0; 0; 1.5; 0" additive="sum"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.685; 0.704; 0.748; 0.760; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="scale" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.685; 0.716; 0.760; 1"
+                 values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
               fill="#38bdf8" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(410, 205)" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.419; 0.422; 0.433; 0.436; 0.919; 0.922; 0.933; 0.936; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="scale" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.419; 0.427; 0.436; 0.919; 0.927; 0.936; 1"
-                 values="0; 0; 1.5; 0; 0; 1.5; 0" additive="sum"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.700; 0.719; 0.763; 0.775; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="scale" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.700; 0.731; 0.775; 1"
+                 values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
               fill="#fde047" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(490, 205)" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.422; 0.426; 0.436; 0.439; 0.922; 0.926; 0.936; 0.939; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="scale" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.422; 0.430; 0.439; 0.922; 0.930; 0.939; 1"
-                 values="0; 0; 1.5; 0; 0; 1.5; 0" additive="sum"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.715; 0.734; 0.778; 0.790; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="scale" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.715; 0.746; 0.790; 1"
+                 values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
               fill="#ffffff" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(620, 205)" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.425; 0.429; 0.439; 0.442; 0.925; 0.929; 0.939; 0.942; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="scale" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.425; 0.433; 0.442; 0.925; 0.933; 0.942; 1"
-                 values="0; 0; 1.5; 0; 0; 1.5; 0" additive="sum"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.730; 0.749; 0.792; 0.805; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="scale" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.730; 0.761; 0.805; 1"
+                 values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
               fill="#38bdf8" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(750, 205)" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.428; 0.432; 0.442; 0.445; 0.928; 0.932; 0.942; 0.945; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="scale" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.428; 0.436; 0.445; 0.928; 0.936; 0.945; 1"
-                 values="0; 0; 1.5; 0; 0; 1.5; 0" additive="sum"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.745; 0.764; 0.808; 0.820; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="scale" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.745; 0.776; 0.820; 1"
+                 values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
               fill="#fde047" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(350, 250)" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.431; 0.435; 0.445; 0.448; 0.931; 0.935; 0.945; 0.948; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="scale" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.431; 0.439; 0.448; 0.931; 0.939; 0.948; 1"
-                 values="0; 0; 1.5; 0; 0; 1.5; 0" additive="sum"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.760; 0.779; 0.823; 0.835; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="scale" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.760; 0.791; 0.835; 1"
+                 values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
               fill="#ffffff" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
       <g transform="translate(550, 130)" opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.434; 0.438; 0.448; 0.452; 0.934; 0.938; 0.948; 0.952; 1"
-                 values="0; 0; 1; 1; 0; 0; 1; 1; 0; 0"/>
-        <animateTransform attributeName="transform" type="scale" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.434; 0.442; 0.452; 0.934; 0.942; 0.952; 1"
-                 values="0; 0; 1.5; 0; 0; 1.5; 0" additive="sum"/>
+        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.775; 0.794; 0.838; 0.850; 1"
+                 values="0; 0; 1; 1; 0; 0"/>
+        <animateTransform attributeName="transform" type="scale" dur="8s" repeatCount="indefinite"
+                 keyTimes="0; 0.775; 0.806; 0.850; 1"
+                 values="0; 0; 1.5; 0" additive="sum"/>
         <path d="M 0 -14 Q 2 -2 14 0 Q 2 2 0 14 Q -2 2 -14 0 Q -2 -2 0 -14 Z"
               fill="#38bdf8" filter="url(#cyanGlow)"/>
         <circle cx="0" cy="0" r="3" fill="#ffffff"/>
       </g>
   </g>
 
-  <!-- ── 7. Dynamic Rotating Bottom Chrome Cabinet Footer Strip ── -->
-  
-    <g transform="translate(450, 362)">
-      <rect x="-380" y="-12" width="760" height="24" rx="6" fill="#13091c" stroke="#3b1d42" stroke-width="1.5"/>
-
-      <!-- Status 1 (0s..8s) -->
-      <g>
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.24; 0.25; 0.99; 1" values="1; 1; 0; 0; 1"/>
-        <text x="-240" y="2" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#38bdf8" text-anchor="middle" letter-spacing="2">
-          STACK: <tspan fill="#4ade80">FULL-STACK</tspan>
-        </text>
-        <text x="0" y="2" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#fde047" text-anchor="middle" letter-spacing="2">
-          PYTHON + NODE.JS + REACT
-        </text>
-        <text x="240" y="2" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#a855f7" text-anchor="middle" letter-spacing="2">
-          MATCH: <tspan fill="#38bdf8">100%</tspan>
-        </text>
-      </g>
-
-      <!-- Status 2 (8s..16s) -->
-      <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.25; 0.49; 0.50; 1" values="0; 1; 1; 0; 0"/>
-        <text x="-240" y="2" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#f59e0b" text-anchor="middle" letter-spacing="2">
-          AI &amp; BACKEND: <tspan fill="#4ade80">ALIGNED</tspan>
-        </text>
-        <text x="0" y="2" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#ffd438" text-anchor="middle" letter-spacing="3">
-          ★ TRIPLE PYTHON JACKPOT ★
-        </text>
-        <text x="240" y="2" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#a855f7" text-anchor="middle" letter-spacing="2">
-          PAYOUT: <tspan fill="#f59e0b">MAX</tspan>
-        </text>
-      </g>
-
-      <!-- Status 3 (16s..24s) -->
-      <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.50; 0.74; 0.75; 1" values="0; 1; 1; 0; 0"/>
-        <text x="-240" y="2" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#60a5fa" text-anchor="middle" letter-spacing="2">
-          FRONTEND: <tspan fill="#38bdf8">TYPE-SAFE</tspan>
-        </text>
-        <text x="0" y="2" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#60a5fa" text-anchor="middle" letter-spacing="2">
-          TS + TS + REACT • HIGH SPEED
-        </text>
-        <text x="240" y="2" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#a855f7" text-anchor="middle" letter-spacing="2">
-          RE-SPIN: <tspan fill="#4ade80">READY</tspan>
-        </text>
-      </g>
-
-      <!-- Status 4 (24s..32s) -->
-      <g opacity="0">
-        <animate attributeName="opacity" dur="32s" repeatCount="indefinite"
-                 keyTimes="0; 0.75; 0.99; 1" values="0; 1; 1; 0"/>
-        <text x="-240" y="2" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#38bdf8" text-anchor="middle" letter-spacing="2">
-          STACK MATCH: <tspan fill="#4ade80">100%</tspan>
-        </text>
-        <text x="0" y="2" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#61dafb" text-anchor="middle" letter-spacing="3">
-          ★ TRIPLE REACT JACKPOT ★
-        </text>
-        <text x="240" y="2" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#a855f7" text-anchor="middle" letter-spacing="2">
-          STATUS: <tspan fill="#38bdf8">READY TO HIRE</tspan>
-        </text>
-      </g>
-    </g>
-    
+  <!-- ── 7. Single Crystal-Clear Bottom Status Strip (Zero Overlap) ── -->
+  <g transform="translate(450, 362)">
+    <rect x="-385" y="-12" width="770" height="24" rx="6" fill="#13091c" stroke="#3b1d42" stroke-width="1.5"/>
+    <text x="-240" y="2" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#38bdf8" text-anchor="middle" letter-spacing="2">
+      STACK: <tspan fill="#4ade80">ONLINE</tspan>
+    </text>
+    <text x="0" y="2" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#fde047" text-anchor="middle" letter-spacing="2">
+      REACT + NODE.JS + PYTHON
+    </text>
+    <text x="240" y="2" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#a855f7" text-anchor="middle" letter-spacing="2">
+      MATCH: <tspan fill="#38bdf8">100% FULL-STACK</tspan>
+    </text>
+  </g>
 </svg>
